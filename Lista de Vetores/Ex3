@@ -1,0 +1,25 @@
+algoritmo MultiplicaVetorPorEscalar
+var
+	a: real
+	i: inteiro
+	A: vetor[1..173] de real
+início
+	escreva("Digite uma lista de números de 173 números:")
+	para i de 1 até 173 faça
+		leia(A[i])
+	fim para
+	escreva("Digite um número real")
+	leia(a)
+	i <- 1
+	enquanto i <= 173 faça
+		leia(A[i])
+		se i = 1 então
+			escreva("(", a * A[i], ", ")
+			se i = 173 então
+				escreva(a * A[i], ")")
+			senão
+				escreva(a * A[i], ", ")
+			fim se
+		fim se
+	fim enquanto
+fim algoritmo
