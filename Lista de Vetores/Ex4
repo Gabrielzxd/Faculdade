@@ -1,0 +1,21 @@
+algoritmo EncontraValorNaLista
+var
+	n: inteiro
+	A: vetor[1..100] de real
+	x: real
+início
+	n <- trunca(91 * aleatório()) + mod 91 + 10
+	escreva("Insira valores na lista")
+	para i de 1 até n faça
+		leia(A[i])
+	fim para
+	i <- 1
+	enquanto i <= n e x != A[i] faça
+		i <- i + 1
+	fim enquanto
+	se i <= n então
+		escreva(i)
+	senão
+		escreva("0")
+	fim se
+fim algoritmo
