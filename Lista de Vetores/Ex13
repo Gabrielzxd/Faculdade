@@ -1,0 +1,28 @@
+algoritmo VerificaSeSequênciasSãoIguais
+var
+    i: inteiro
+    A, B: vetor[1..29] de real
+    sucesso: lógico
+início
+    escreva("Digite duas sequências de 29 números: ")
+    para i de 1 até 29 faça
+        leia(A[i])
+    fim para
+    para i de 1 até 29 faça
+        leia(B[i])
+    fim para
+    sucesso <- verdadeiro
+    i <- 1
+    enquanto i <= 29 e sucesso faça
+        se A[i] != B[i] então
+            sucesso <- falso
+        senão
+            i <- i + 1
+        fim se
+    fim enquanto
+    se sucesso então
+        escreva("Sucesso")
+    senão
+        escreva("Falha")
+    fim se
+fim algoritmo
