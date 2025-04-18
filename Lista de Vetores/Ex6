@@ -1,0 +1,29 @@
+algoritmo EncontraPosiçãoDeUmValorNumaListaUsandoBinarySearch
+var
+	i, n, esq, dir, meio, pos: inteiro
+	A: vetor[1..150] de real
+	x: real
+início
+	n <- trunca(136 * aleatório()) mod 136 + 15
+	para i de 1 até n faça
+		escreva("Digite um número: ")
+		leia(A[i])
+	fim para
+	escreva("Digite um número")
+	leia(x)
+	esq <- 1
+	dir <- n
+	pos <- 0
+	enquanto esq <= dir faça
+		meio <- (A[esq] + A[dir]) div 2
+		se A[meio] > x então
+			dir <- meio - 1
+		senão
+			se A[meio] < x então
+				esq <- meio + 1
+			senão
+				pos <- meio
+		fim se
+	fim enquanto
+	escreva(pos)
+fim algoritmo
