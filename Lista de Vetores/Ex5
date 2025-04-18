@@ -1,7 +1,7 @@
 algoritmo ExibeQuantasVezesCadaNúmeroApareceNaLista
 var
 	i, num: inteiro
-	A, V: vetor[1..4095] de real
+	V: vetor[1..63] de real
 início
 	escreva("Digite 4095 números inteiros entre 1 e 63.")
 	para i de 1 até 63 faça
@@ -13,11 +13,10 @@ início
 			escreva("número inválido")
 			leia(num)
 		fim se
-		A[i] <- num
 		V[num] <- V[num] + 1
 	fim para
 	para i de 1 até 63 faça
-		se V[i] != 0 então
+		se V[i] > 0 então
 			escreva("O número ", i, "apareceu ", V[i], "vezes")
 		senão
 			escreva("O número ", i, "não apareceu")
