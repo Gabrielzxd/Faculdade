@@ -1,0 +1,22 @@
+algoritmo CalculaMédiaEQuantosEstaoAcimaDaMédia
+var
+    A: vetor[1..53] de inteiro
+	i, soma, qnt_maior: inteiro
+	media: real
+início
+	escreva("Digite 53 números inteiros: ")
+	soma <- 0
+	para i de 1 até 53 faça
+		leia(A[i])
+		soma <- soma + A[i]
+	fim para
+	media <- soma/53
+	qnt_maior <- 0
+	escreva("A média é ", media)
+	para i de 1 até 53 faça
+		se A[i] > media então
+			qnt_maior <- qnt_maior + 1
+		fim se
+	fim para
+	escreva("A quantidade de números maiores que a média é ", qnt_maior)
+fim algoritmo
