@@ -1,0 +1,20 @@
+algoritmo VerificaQuantasVezesCadaCaracterDaFraseAparece
+var
+	i: inteiro
+	s: string
+	V: vetor[1..127] de inteiro
+início
+	escreva("Digite uma frase: ")
+	leia(s)
+	para i de 1 até 127 faça
+		V[i] <- 0
+	fim para
+	i <- 1
+	enquanto i <= tamanho(s) faça
+		V[asc(A[i])] <- V[asc(A[i])] + 1
+	fim enquanto
+	i <- 1
+	se V[i] > 0 então
+		escreva("O número ", i, "apareceu ", V[i], "vezes")
+	fim se
+fim algoritmo
