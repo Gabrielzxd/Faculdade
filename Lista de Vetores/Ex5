@@ -1,7 +1,7 @@
 algoritmo ExibeQuantasVezesCadaNúmeroApareceNaLista
 var
 	i, num: inteiro
-	V: vetor[1..63] de real
+	V: vetor[1..63] de inteiro
 início
 	escreva("Digite 4095 números inteiros entre 1 e 63.")
 	para i de 1 até 63 faça
