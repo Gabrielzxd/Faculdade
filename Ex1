@@ -1,0 +1,27 @@
+algoritmo VerificaSeSequênciasSãoIguais
+var
+    i, n: inteiro
+    A, B: vetor[1..542] de real
+início
+    escreva("Digite um número estritamente positivo e menor do que 543")
+    leia(n)
+    enquanto n <= 0 ou n > 542 faça
+        escreva("Número inválido")
+        leia(n)
+    fim enquanto
+    para i de 1 até n faça
+        leia(A[i])
+    fim para
+    para i de 1 até n faça
+        leia(B[i])
+    fim para
+    i <- 1
+    enquanto i <= n e A[i] = B[i] faça
+        i <- i + 1
+    fim enquanto
+    se i <= n então
+        escreva("As sequências são diferentes.")
+    senão
+        escreva("As sequências são iguais.")
+    fim se
+fim algoritmo
