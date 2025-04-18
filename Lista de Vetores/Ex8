@@ -1,0 +1,31 @@
+algoritmo
+var
+	i, maior, num, qnt: inteiro
+	V: vetor[13..51] de inteiro
+início
+	escreva("Escreva 791 números inteiros: ")
+	leia(num)
+	para i de 13 até 51 faça
+		V[i] <- 0
+	fim para
+	para i de 1 até 790 faça
+		leia(num)
+		se num < 13 ou num > 51 então
+			leia(num)
+		fim se
+		V[num] <- V[num] + 1
+	fim para
+	maior <- V[13]
+	qnt <- 1
+	para i de 14 até 53 faça
+		se V[i] > maior então
+			maior <- V[i]
+			qnt <- 1
+		senão
+			se V[i] = maior
+				qnt <- qnt + 1
+			fim se
+		fim se
+	fim para
+	escreva(qnt, moda)
+fim algoritmo
