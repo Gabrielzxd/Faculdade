@@ -14,8 +14,9 @@ início
 		V[asc(A[i])] <- V[asc(A[i])] + 1
 		i <- i + 1
 	fim enquanto
-	i <- 1
-	se V[i] > 0 então
-		escreva("O número ", i, "apareceu ", V[i], "vezes")
-	fim se
+	para i de 1 até 127 faça
+		se V[i] > 0 então
+			escreva("O número ", i, "apareceu ", V[i], "vezes")
+		fim se
+	fim para
 fim algoritmo
