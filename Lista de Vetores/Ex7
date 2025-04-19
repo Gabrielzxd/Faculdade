@@ -12,6 +12,7 @@ início
 	i <- 1
 	enquanto i <= tamanho(s) faça
 		V[asc(A[i])] <- V[asc(A[i])] + 1
+		i <- i + 1
 	fim enquanto
 	i <- 1
 	se V[i] > 0 então
