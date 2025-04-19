@@ -9,11 +9,10 @@ início
 	para i de 1 até 127 faça
 		V[i] <- 0
 	fim para
-	i <- 1
-	enquanto i <= tamanho(s) faça
+	para i de 1 até tamanho(s) faça
 		V[asc(A[i])] <- V[asc(A[i])] + 1
 		i <- i + 1
-	fim enquanto
+	fim para
 	para i de 1 até 127 faça
 		se V[i] > 0 então
 			escreva("O número ", i, "apareceu ", V[i], "vezes")
