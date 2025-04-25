@@ -4,11 +4,10 @@ var
 	V: vetor[13..51] de inteiro
 início
 	escreva("Escreva 791 números inteiros: ")
-	leia(num)
 	para i de 13 até 51 faça
 		V[i] <- 0
 	fim para
-	para i de 1 até 790 faça
+	para i de 1 até 791 faça
 		leia(num)
 		se num < 13 ou num > 51 então
 			leia(num)
