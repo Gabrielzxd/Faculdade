@@ -10,7 +10,7 @@ início
 		leia(A[i])
 	fim para
 	i <- 1
-	enquanto i <= n e x != A[i] faça
+	enquanto i <= n e x = A[i] faça
 		i <- i + 1
 	fim enquanto
 	se i <= n então
