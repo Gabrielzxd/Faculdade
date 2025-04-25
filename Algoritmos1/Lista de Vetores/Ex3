@@ -15,7 +15,7 @@ início
 		leia(A[i])
 		se i = 1 então
 			escreva("(", a * A[i], ", ")
-   senão 
+   		senão 
 			se i = 173 então
 				escreva(a * A[i], ")")
 			senão
