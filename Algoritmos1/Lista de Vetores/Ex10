@@ -14,9 +14,9 @@ início
 	qnt_maior <- 0
 	escreva("A média é ", media)
 	para i de 1 até 53 faça
-		se A[i] > media então
+		se A[i] >= media então
 			qnt_maior <- qnt_maior + 1
 		fim se
 	fim para
-	escreva("A quantidade de números maiores que a média é ", qnt_maior)
+	escreva("A quantidade de números maiores ou iguais que a média é ", qnt_maior)
 fim algoritmo
