@@ -2,7 +2,6 @@ algoritmo ExibeNumerosDoVetorNaOrdemInversa
 var
 	i, n: inteiro
 	A: vetor[1..111] de real
-	inverso: string
 início
 	escreva("Digite um número inteiro entre 1 e 111")
 	leia(n)
