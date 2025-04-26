@@ -1,0 +1,31 @@
+algoritmo VerificaSeTodasAsLetrasForamDigitadas
+var
+	s: string
+	t, i, letra, soma: inteiro
+	A: vetor[1..26] de inteiro
+início
+	escreva("Digite uma frase: ")
+	leia(s)
+	t <- tamanho(s)
+	para i de 1 até t faça
+		letra <- asc(s[i])
+		se 'a' <= s[i] e s[i] <= 'z' então
+			letra <- letra - asc('a')
+			A[letra] <- 1
+		senão
+			se 'A' <= s[i] e s[i] <= 'Z' então
+				letra <- letra - asc('A')
+				A[letra] <- 1
+			fim se
+		fim se
+	fim para
+	soma <- 0
+	para i de 1 até 26 faça
+		soma <- soma + A[i]
+	fim para
+	se soma = 26 então
+		escreva("sim")
+	senão
+		escreva("não")
+	fim se
+fim algoritmo
