@@ -9,9 +9,9 @@ início
 	fim para
 	para i de 1 até 791 faça
 		leia(num)
-		se num < 13 ou num > 51 então
+		enquanto num < 13 ou num > 51 faça
 			leia(num)
-		fim se
+		fim enquanto
 		V[num] <- V[num] + 1
 	fim para
 	maior <- V[13]
