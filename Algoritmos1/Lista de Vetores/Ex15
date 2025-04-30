@@ -1,0 +1,26 @@
+algoritmo ExibeMediaEEncontraNumerosProximos
+var
+	i, maior, num, qnt: inteiro
+	V: vetor[1..537] de inteiro
+início
+	escreva("Escreva 537 números inteiros: ")
+    soma <- 0
+	para i de 1 até 537 faça
+		leia(num)
+		soma <- soma + num
+	fim para
+	media <- soma/537
+	qnt <- 1
+    mais_proximo <- A[1]
+	para i de 2 até 537 faça
+		se abs(media - A[i]) < mais_proximo então
+			mais_proximo <- A[i]
+			qnt <- 1
+		senão
+			se A[i] = mais_proximo então
+				qnt <- qnt + 1
+			fim se
+		fim se
+	fim para
+	escreva(media, mais_proximo, qnt)
+fim algoritmo
