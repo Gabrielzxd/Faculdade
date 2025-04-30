@@ -1,0 +1,37 @@
+algoritmo ExibeListaDeReaisDistintos
+var
+	i, j, n: inteiro
+	A: vetor[1..30] de real
+	num: real
+	duplicado: lógico
+início
+	escreva("Digite um inteiro entre 3 e 30: ")
+	leia(n)
+	enquanto n < 3 ou n > 30 faça
+		escreva("Entrada inválida")
+		leia(n)
+	fim enquanto
+	i <- 1
+	enquanto i <= n faça
+		escreva("Digite um número")
+		leia(num)
+		duplicado <- falso
+		j <- 1
+		enquanto j < i e não duplicado faça
+			se A[j] = num então
+				duplicado <- verdadeiro
+			fim se
+			j <- j + 1
+		fim enquanto
+		se duplicado então
+			escreva("Número repetido.")
+			leia(num)
+		senão
+			A[i] <- num
+			i <- i + 1
+		fim se
+	fim enquanto
+	para i de 1 até n faça
+		escreva(A[i])
+	fim para
+fim algoritmo
