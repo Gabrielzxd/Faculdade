@@ -7,7 +7,7 @@ início
 	para i de 1 até 128 faça
 		leia(A[i])
 	fim para
-	qnt <- 0
+	qnt <- 1
 	maior <- A[1] + A[128]
 	para i de 2 até 64 faça
 		se A[i] + A[128 - i + 1] > maior então
