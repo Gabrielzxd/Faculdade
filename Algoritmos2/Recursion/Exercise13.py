@@ -1,2 +1,47 @@
 def HexadecimalStringToDecimalString(hexa: str) -> str:
-    def position(i)
+    def IsHexadecimal(hexa: str) -> bool:
+        def Position(i: int) -> bool:
+            if(i == 0):
+                if(hexa[i] == '-'):
+                    return True
+                else:
+                    return '0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'Z'
+            else:
+                return Position(i - 1) and ('0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'Z')
+        return Position(len(hexa) - 1)
+    def TransformerToInteger(hexa: str) -> int:
+        def Pos(i: int) -> int:
+            if(i == 0):
+                if(hexa[i] == '-'):
+                    return 0
+                else:
+                    if('A' <= hexa[i] <= 'F'):
+                        return ord(hexa[i]) - ord('A') + 10
+                    else:
+                        return ord(hexa[i]) - ord('0')
+            else:
+                if('A' <= hexa[i] <= 'F'):
+                    return Pos(i - 1)*16 + ord(hexa[i]) - ord('A') + 10
+                else:
+                    return Pos(i - 1)*16 + ord(hexa[i]) - ord('0')
+        return Pos(len(hexa) - 1)
+    def TransformerIntegerToString(number: int) -> str:
+        if(number == 0):
+            return ""
+        else:
+            if(number % 10 == number):
+                return chr(number + ord('0'))
+            else:
+                return TransformerIntegerToString(number // 10) + chr(number % 10 + ord('0'))
+    if(not(IsHexadecimal(hexa)) or len(hexa) == 0):
+        return ""
+    else:
+        num = TransformerToInteger(hexa)
+        if(hexa[0] == '-'):
+            res = '-' + TransformerIntegerToString(num)
+        else:
+            res = TransformerIntegerToString(num)
+    return res
+
+HexaTest = "-1A1"
+print(HexadecimalStringToDecimalString(HexaTest))

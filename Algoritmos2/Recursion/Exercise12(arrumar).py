@@ -1,6 +1,6 @@
 def OctalStringForDecimal(octal: str) -> int:
     def IsOctal(octal: str) -> bool:
-        def Position(i: int) -> bool:
+        def Position(i: int) -> bool: #Talvez não precise dessa função
             if(i == 0):
                 return '0' <= octal[i] <= '7'
             return Position(i-1) and ('0' <= octal[i] <= '7')
