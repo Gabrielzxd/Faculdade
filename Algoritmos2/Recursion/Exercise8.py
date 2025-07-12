@@ -1,8 +1,13 @@
 def OctalBase(decimal: int) -> int:
-    if(decimal < 8):
-        return decimal
+    def Transformer(decimal: int) -> int:
+        if(decimal < 8):
+            return decimal
+        else:
+            return  Transformer(decimal // 8)*10 + decimal % 8
+    if(decimal > 0):
+        return Transformer(decimal)
     else:
-        return  OctalBase(decimal // 8)*10 + decimal % 8
+        return -Transformer(-decimal)
 
-NumTeste = 142
-print(OctalBase(142))
+NumTeste = -142
+print(OctalBase(NumTeste))
