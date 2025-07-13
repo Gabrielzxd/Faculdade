@@ -1,4 +1,6 @@
 def NumberCallsFibonacci(num: int) -> int:
+    if(num < 0):
+        return -999999
     if(num == 0 or num == 1):
         return 1
     else:

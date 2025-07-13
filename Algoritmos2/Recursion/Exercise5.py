@@ -15,6 +15,6 @@ def NumberTimesNumberInOuther(a, b: int) -> int:
                 else:
                     return NumberTimesNumberInOuther(a // 10, b)
 
-a = 123452
+a = 12345222
 b = 2
 print(NumberTimesNumberInOuther(a, b))

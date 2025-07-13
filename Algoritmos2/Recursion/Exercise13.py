@@ -1,30 +1,26 @@
 def HexadecimalStringToDecimalString(hexa: str) -> str:
-    def IsHexadecimal(hexa: str) -> bool:
-        def Position(i: int) -> bool:
-            if(i == 0):
-                if(hexa[i] == '-'):
-                    return True
-                else:
-                    return '0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'Z'
+    def IsHexadecimal(i: int) -> bool:
+        if(i == 0):
+            if(hexa[i] == '-'):
+               return True
             else:
-                return Position(i - 1) and ('0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'Z')
-        return Position(len(hexa) - 1)
-    def TransformerToInteger(hexa: str) -> int:
-        def Pos(i: int) -> int:
-            if(i == 0):
-                if(hexa[i] == '-'):
-                    return 0
-                else:
-                    if('A' <= hexa[i] <= 'F'):
-                        return ord(hexa[i]) - ord('A') + 10
-                    else:
-                        return ord(hexa[i]) - ord('0')
+                return '0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'F'
+        else:
+            return IsHexadecimal(i - 1) and ('0' <= hexa[i] <= '9' or 'A' <= hexa[i] <= 'F')
+    def TransformerToInteger(i: int) -> int:
+        if(i == 0):
+            if(hexa[i] == '-'):
+                return 0
             else:
                 if('A' <= hexa[i] <= 'F'):
-                    return Pos(i - 1)*16 + ord(hexa[i]) - ord('A') + 10
+                    return ord(hexa[i]) - ord('A') + 10
                 else:
-                    return Pos(i - 1)*16 + ord(hexa[i]) - ord('0')
-        return Pos(len(hexa) - 1)
+                    return ord(hexa[i]) - ord('0')
+        else:
+            if('A' <= hexa[i] <= 'F'):
+                return TransformerToInteger(i - 1)*16 + ord(hexa[i]) - ord('A') + 10
+            else:
+                return TransformerToInteger(i - 1)*16 + ord(hexa[i]) - ord('0')
     def TransformerIntegerToString(number: int) -> str:
         if(number == 0):
             return ""
@@ -33,10 +29,10 @@ def HexadecimalStringToDecimalString(hexa: str) -> str:
                 return chr(number + ord('0'))
             else:
                 return TransformerIntegerToString(number // 10) + chr(number % 10 + ord('0'))
-    if(not(IsHexadecimal(hexa)) or len(hexa) == 0):
+    if(not(IsHexadecimal(len(hexa) - 1)) or len(hexa) == 0):
         return ""
     else:
-        num = TransformerToInteger(hexa)
+        num = TransformerToInteger(len(hexa) - 1)
         if(hexa[0] == '-'):
             res = '-' + TransformerIntegerToString(num)
         else:
