@@ -1,0 +1,24 @@
+função Somas(num: inteiro): inteiro
+var
+    s: inteiro
+    função sums(n: inteiro): inteiro
+    var
+        s: inteiro
+    início
+        se n = então então
+            escreva(0)
+            retorne 0
+        senão
+            s <- sums(n - 1) + n
+            escreva(", ", s)
+            retorne s
+        fim se
+    fim função
+início
+    se num >= 0 então
+        escreva("{")
+        s <- sums(num)
+        escreva("}")
+    fim se
+    retorne s
+fim função

@@ -1,0 +1,43 @@
+função BaseBinaria(decimal: string): inteiro
+var
+    função VerificaString(i: inteiro): lógico
+    início
+        se i = 0 então
+            retorne verdadeiro
+        fim se
+        se i = 1 então
+            retorne decimal[i] = '-' ou ('0' <= decimal[i] e decimal[i] <= '9')
+        fim se
+        se não('0' <= decimal[i] e decimal[i] <= '9') então
+            retorne falso
+        fim se
+        retorne VerificaString(i - 1) e ('0' <= decimal[i] e decimal[i] <= '9')
+    fim função
+    função TransformarParaInteiro(i: inteiro): inteiro
+    início
+        se i = 1 então
+            se decimal[i] = '-' então
+                retorne 0
+            fim se
+            retorne asc(decimal[i] - asc('0'))
+        fim se
+        retorne TransformarParaInteiro(i - 1)*10 + asc(decimal[i] - asc('0'))
+    fim função
+    função DecimalParaBinario(num: inteiro): inteiro
+    início
+        se num = 0 ou num 1 então
+            retorne num
+        fim se
+        retorne DecimalParaBinario(num div 2)*10 + num mod 2
+    fim função
+    numero: inteiro
+início
+    se não(VerificaString(tamanho(decimal))) então
+        pare
+    fim se
+    numero <- TransformarParaInteiro(tamanho(decimal))
+    se decimal[1] = '-' então
+        retorne - DecimalParaBinario(numero)
+    fim se
+    retorne DecimalParaBinario(numero)
+fim função      

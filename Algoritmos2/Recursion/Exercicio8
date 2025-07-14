@@ -1,0 +1,16 @@
+função BaseOctal(decimal: inteiro): inteiro
+início
+    se decimal < 0 então
+        se decimal < 8 então
+            retorne decimal
+        senão
+            retorne BaseOctal(decimal div 8)*10 + decimal mod 8
+        fim se
+    senão
+        se decimal > -8 então
+            retorne decimal
+        senão
+            retorne - BaseOctal((-decimal) div 8)*10 - (-decimal) mod 8
+        fim se
+    fim se
+fim função

@@ -1,0 +1,17 @@
+const
+    flag = 0
+var
+    função MDC(a, b: inteiro): inteiro
+    início
+        se a <= 0 ou b <= 0 então
+            retorne flag
+        fim se
+        se a > b então
+            retorne flag
+        fim se
+        se a = b então
+            retorne a
+        senão
+            retorne MDC(b, a mod b)
+        fim se
+    fim função

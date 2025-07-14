@@ -1,0 +1,16 @@
+função InverteNumero(num: inteiro): inteiro
+var
+    função aux(num, res: inteiro): inteiro
+    início
+        se num = 0 então
+            retorne res
+        fim se
+        retorne aux(num div 10, res * 10 + num mod 10)
+    fim função
+início
+    se num < 0 então
+        retorne - aux(-num, 0)
+    senão
+        retorne aux(num, 0)
+    fim se
+fim função
