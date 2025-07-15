@@ -1,0 +1,9 @@
+função MaiorValor(flag: real): real
+var
+    maior, num: real
+início
+    leia(num)
+    se num = flag então
+        retorne num
+    fim se
+    maior <- MaiorValor(flag)

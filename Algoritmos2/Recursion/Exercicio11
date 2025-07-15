@@ -1,0 +1,20 @@
+função TransformaParaDecimal(bin: inteiro): inteiro
+var
+    função VerificaBinario(bin: inteiro): lógico
+    início
+        se bin = 0 ou bin = 1 então
+            retorne verdadeiro
+        senão
+            retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
+        fim se
+    fim função
+início
+    se VerificaBinario(bin) então
+        retorne -999999
+    fim se
+    se bin == 0 ou bin == 1 então
+        retorne bin
+    senão
+        retorne TransformaParaDecimal(bin div 10)*2 + bin mod 10
+    fim se
+fim função

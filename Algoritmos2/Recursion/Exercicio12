@@ -1,0 +1,33 @@
+função OctalStringParaDecimal(octal: string): inteiro
+var
+    função VerificaOctal(i: inteiro): lógico
+    início
+        se i = 1 então
+            se octal[i] = '-' então
+                retorne verdadeiro
+            senão
+                retorne '0' <= octal[i] e octal[i] <= '7'
+            fim se
+        fim se
+    fim função
+    função Pos(i: inteiro): inteiro
+    início
+        se i = 1 então
+            se octal[i] = '-' então
+                retorne 0
+            senão
+                retorne asc(octal[i]) - asc('0')
+            fim se
+        fim se
+        retorne Pos(i-1)*8 + asc(octal[i]) - asc('0')
+    fim função
+início
+    se não VerificaOctal(octal) então
+        retorne -999999
+    fim se
+    se octal[1] = '-' então
+        retorne - Pos(tamanho(octal))
+    senão
+        retorne Pos(tamanho(octal))
+    fim se
+fim função

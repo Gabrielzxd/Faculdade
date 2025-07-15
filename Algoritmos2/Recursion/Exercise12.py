@@ -1,13 +1,11 @@
 def OctalStringForDecimal(octal: str) -> int:
-    def IsOctal(octal: str) -> bool:
-        def Position(i: int) -> bool:
-            if(i == 0):
-                if(octal[i] == '-'):
-                    return True
-                else:
-                    return '0' <= octal[i] <= '7'
-            return Position(i-1) and ('0' <= octal[i] <= '7')
-        return Position(len(octal) - 1)
+    def IsOctal(i: int) -> bool:
+        if(i == 0):
+            if(octal[i] == '-'):
+                return True
+            else:
+                return '0' <= octal[i] <= '7'
+        return IsOctal(i - 1) and ('0' <= octal[i] <= '7')
     def Pos(i: int) -> int:
         if(i == 0):
             if(octal[i] == '-'):
