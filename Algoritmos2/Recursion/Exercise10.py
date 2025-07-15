@@ -1,5 +1,7 @@
 def DecimalStringForBinary(decimal: str) -> int:
     def VerifyString(i: int) -> bool:
+        if i < 0:
+            return False
         if i == 0:
             return decimal[i] == '-' or ('0' <= decimal[i] <= '9')
         if not ('0' <= decimal[i] <= '9'):
@@ -27,7 +29,7 @@ def DecimalStringForBinary(decimal: str) -> int:
         else:
             return DecimalToBinary(num)
         
-Test = "-5"
+Test = ""
 print(DecimalStringForBinary(Test))
 
     

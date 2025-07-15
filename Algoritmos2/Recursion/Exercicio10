@@ -3,7 +3,7 @@ var
     função VerificaString(i: inteiro): lógico
     início
         se i = 0 então
-            retorne verdadeiro
+            retorne falso
         fim se
         se i = 1 então
             retorne decimal[i] = '-' ou ('0' <= decimal[i] e decimal[i] <= '9')
