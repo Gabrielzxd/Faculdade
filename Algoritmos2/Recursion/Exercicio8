@@ -1,6 +1,6 @@
 função BaseOctal(decimal: inteiro): inteiro
 início
-    se decimal < 0 então
+    se decimal > 0 então
         se decimal < 8 então
             retorne decimal
         senão

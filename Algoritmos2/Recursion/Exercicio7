@@ -15,6 +15,7 @@ var
         fim se
     fim função
 início
+    s <- -1
     se num >= 0 então
         escreva("{")
         s <- sums(num)
