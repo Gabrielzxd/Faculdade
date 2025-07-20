@@ -12,4 +12,4 @@ def MinString(names: list[str], length: int) -> str:
 
 
 names = ["João", "Maria", "Eduardo", "Antonio", "Julia"]
-print(MinString(names, 5))
+print(MinString(names, 0))

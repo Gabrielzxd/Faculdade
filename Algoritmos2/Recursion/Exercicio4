@@ -2,16 +2,19 @@ const
     flag = 0
 var
     função MDC(a, b: inteiro): inteiro
-    início
-        se a <= 0 ou b <= 0 então
+    var
+        aux: inteiro
+    inicio
+        se a < 0 ou b < 0 entao
             retorne flag
         fim se
-        se a > b então
-            retorne flag
+        se b > a entao
+            aux <- b
+            b <- a
+            a <- aux
         fim se
-        se a = b então
-            retorne a
-        senão
-            retorne MDC(b, a mod b)
+        se a mod b = 0 entao
+            retorne b
         fim se
+        retorne MDC(b, a mod b)
     fim função

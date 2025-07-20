@@ -4,9 +4,8 @@ var
     início
         se bin = 0 ou bin = 1 então
             retorne verdadeiro
-        senão
-            retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
         fim se
+            retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
     fim função
 início
     se VerificaBinario(bin) então
@@ -14,7 +13,6 @@ início
     fim se
     se bin == 0 ou bin == 1 então
         retorne bin
-    senão
-        retorne TransformaParaDecimal(bin div 10)*2 + bin mod 10
     fim se
-fim função
+    retorne TransformaParaDecimal(bin div 10)*2 + bin mod 10
+fim função  

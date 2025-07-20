@@ -18,7 +18,6 @@ var
     início
         se tamanho = 0 então
             retorne ""
-        senão
-            retorne auxiliar(tamanho - 1, nomes[i])
         fim se
+        retorne auxiliar(tamanho - 1, nomes[tamanho])
     fim função

@@ -2,23 +2,26 @@ const
     flag = -1
 var
     função QntVezesAlgarismoNoNumero(a, b: inteiro): inteiro
+    var
+        função Contagem(a, b: inteiro): inteiro
+        início
+            se a = 0 então
+                retorne 0
+            fim se
+            se a mod 10 = b então
+                retorne 1 + Contagem(a div 10, b)
+            fim se
+            retorne Contagem(a div 10, b)
+        fim função
     início
         se a < 0 ou b < 0 então
             retorne flag
         fim se
-        se b mod 10 != b então
+        se b > 9 então
             retorne flag
         fim se
         se a = 0 e b = 0 então
             retorne 1
         fim se
-        se a = 0 então
-            retorne 0
-        senão
-            se a mod 10 = b então
-                retorne QntVezesAlgarismoNoNumero(a div 10, b) + 1
-            senão
-                retorne QntVezesAlgarismoNoNumero(a div 10, b)
-            fim se
-        fim se
+        QntVezesAlgarismoNoNumero(a, b)
     fim função

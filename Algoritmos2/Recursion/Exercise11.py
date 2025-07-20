@@ -1,6 +1,6 @@
 def BinaryForDecimal(binary: int) -> int:
     def IsBinary(binary: int) -> bool:
-        if(binary == 0):
+        if(binary == 0 or binary == 1):
             return True
         return IsBinary(binary // 10) and (0 <= binary % 10 <= 1)
     if(binary < 0):

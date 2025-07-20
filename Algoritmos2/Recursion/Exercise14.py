@@ -6,4 +6,3 @@ def MaxValue(flag: float) -> float:
     if(num > max or num == flag):
         return num
     return max
-    

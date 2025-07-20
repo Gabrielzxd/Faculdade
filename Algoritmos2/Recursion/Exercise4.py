@@ -1,13 +1,12 @@
-FLAG = 0
-
 def MDC(a, b: int) -> int:
-    if(a <= 0 or b <= 0):
-        return FLAG
-    else:
-        if (b > a):
-            return FLAG
-        else:
-            if(a == b):
-                return a
-            else:
-                return MDC(b, a % b)
+    if a < 0 or b < 0:
+        return -1
+    if b > a:
+        aux = b
+        b = a
+        a = b
+    if a % b == 0:
+        return b
+    return MDC(b, a % b)
+
+print(MDC(4, 12))
