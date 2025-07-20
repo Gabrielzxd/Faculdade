@@ -1,0 +1,14 @@
+função Ultima_Posição_Caracter_Na_String(s: string; c: caracter): inteiro
+var
+    função Acha_Posição(i: inteiro): inteiro
+        se i = 0 então
+            retorne 0
+        fim se
+        se s[i] = c então
+            retorne i
+        fim se
+        retorne Acha_Posição(i - 1)
+    fim função
+início
+    retorne Acha_Posição(tamanho(s))
+fim função

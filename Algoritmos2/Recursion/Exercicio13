@@ -1,0 +1,48 @@
+função StringHexadecimalParaStringDecimal(hexa: string): string
+var
+    função VerificaStringHexadecimal(i: inteiro): lógico
+    início
+        se i = 1 então
+            retorne hexa[i] = '-' ou ('0' <= hexa[i] e hexa[i] <= '9') ou ('A' <= hexa[i] e hexa[i] <= 'F')
+        fim se
+        retorne VerificaStringHexadecimal(i - 1) e (('0' <= hexa[i] e hexa[i] <= '9') ou ('A' <= hexa[i] e hexa[i] <= 'F'))
+    fim função
+    função TransformaParaInteiro (i: inteiro): inteiro
+    início
+        se i = 1 então
+            se hexa[i] = '-' então
+                retorne 0
+            fim se
+            se '0' <= hexa[i] e hexa[i] <= '9' então
+                retorne asc(hexa[i]) + asc('0')
+            senão
+                retorne asc(hexa[i]) + 10 - asc('A')
+            fim se
+        fim se
+        se '0' <= hexa[i] e hexa[i] <= '9' então
+            retorne TransformaParaInteiro(i - 1)*16 + asc(hexa[i]) + asc('0')
+        senão
+            retorne TransformaParaInteiro(i - 1)*16 + asc(hexa[i]) + 10 - asc('A')
+        fim se
+    fim função
+    função TransformaParaStringDecimal(num: inteiro): string
+    início
+        se num = 0 então
+            retorne ""
+        fim se
+        se num < 9 então
+            retorne chr(num + asc('0'))
+        fim se
+        retorne TransformaParaStringDecimal(num div 10) + chr(num % 10 + asc('0'))
+    fim função
+    num: inteiro
+início
+    se não VerificaStringHexadecimal(tamanho(hexa)) ou tamanho(hexa) = 0 então
+        retorne ""
+    fim se
+    num <- TransformaParaInteiro(tamanho(hexa))
+    se hexa[1] = '-' então
+        retorne '-' + TransformaParaStringDecimal(num)
+    fim se
+        retorne TransformaParaStringDecimal(num)
+fim função

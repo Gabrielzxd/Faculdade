@@ -7,3 +7,7 @@ início
         retorne num
     fim se
     maior <- MaiorValor(flag)
+    se num > maior ou maior = flag então
+        retorne num
+    fim se
+fim função  
