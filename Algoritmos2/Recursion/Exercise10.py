@@ -4,8 +4,6 @@ def DecimalStringForBinary(decimal: str) -> int:
             return False
         if i == 0:
             return decimal[i] == '-' or ('0' <= decimal[i] <= '9')
-        if not ('0' <= decimal[i] <= '9'):
-            return False
         return VerifyString(i - 1) and '0' <= decimal[i] <= '9'
     def StringForInteger(i: int) -> int:
         if(i == 0):
@@ -29,7 +27,7 @@ def DecimalStringForBinary(decimal: str) -> int:
         else:
             return DecimalToBinary(num)
         
-Test = ""
+Test = "14"
 print(DecimalStringForBinary(Test))
 
     

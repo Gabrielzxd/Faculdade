@@ -5,10 +5,12 @@ var
         se bin = 0 ou bin = 1 então
             retorne verdadeiro
         fim se
-            retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
+        retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
     fim função
 início
-    se VerificaBinario(bin) então
+    se bin < 0 então
+        retorne - TransformaParaDecimal(-bin)
+    se não(VerificaBinario(bin)) então
         retorne -999999
     fim se
     se bin == 0 ou bin == 1 então
