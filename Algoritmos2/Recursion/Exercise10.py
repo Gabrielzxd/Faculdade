@@ -27,7 +27,7 @@ def DecimalStringForBinary(decimal: str) -> int:
         else:
             return DecimalToBinary(num)
         
-Test = "14"
+Test = "-14"
 print(DecimalStringForBinary(Test))
 
     

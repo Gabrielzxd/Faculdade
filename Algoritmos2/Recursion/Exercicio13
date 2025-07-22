@@ -15,9 +15,8 @@ var
             fim se
             se '0' <= hexa[i] e hexa[i] <= '9' então
                 retorne asc(hexa[i]) + asc('0')
-            senão
-                retorne asc(hexa[i]) + 10 - asc('A')
             fim se
+            retorne asc(hexa[i]) + 10 - asc('A')
         fim se
         se '0' <= hexa[i] e hexa[i] <= '9' então
             retorne TransformaParaInteiro(i - 1)*16 + asc(hexa[i]) + asc('0')

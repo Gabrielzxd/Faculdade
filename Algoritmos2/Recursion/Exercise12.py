@@ -17,5 +17,5 @@ def OctalStringForDecimal(octal: str) -> int:
     else:
         return Pos(len(octal) - 1)
 
-NumTest = "145"
+NumTest = "-185"
 print(OctalStringForDecimal(NumTest))
