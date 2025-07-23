@@ -1,5 +1,5 @@
 def MDC(a, b: int) -> int:
-    if a < 0 or b < 0:
+    if a <= 0 or b <= 0:
         return -1
     if b > a:
         aux = b

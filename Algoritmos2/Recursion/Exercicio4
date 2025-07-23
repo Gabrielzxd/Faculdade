@@ -5,7 +5,7 @@ var
     var
         aux: inteiro
     inicio
-        se a < 0 ou b < 0 entao
+        se a <= 0 ou b <= 0 entao
             retorne flag
         fim se
         se b > a entao
