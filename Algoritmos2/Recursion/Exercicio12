@@ -7,7 +7,7 @@ var
         fim 
         retorne VerificaOctal(i - 1) e '0' <= octal[i] e octal[i] <= '7'
     fim função
-    função Pos(i: inteiro): inteiro
+    função Transformar(i: inteiro): inteiro
     início
         se i = 1 então
             se octal[i] = '-' então
@@ -16,15 +16,15 @@ var
                 retorne asc(octal[i]) - asc('0')
             fim se
         fim se
-        retorne Pos(i-1)*8 + asc(octal[i]) - asc('0')
+        retorne Transformar(i-1)*8 + asc(octal[i]) - asc('0')
     fim função
 início
-    se não VerificaOctal(octal) então
+    se não VerificaOctal(octal) ou tamanho(s) = 0 então
         retorne -999999
     fim se
     se octal[1] = '-' então
-        retorne - Pos(tamanho(octal))
+        retorne - Transformar(tamanho(octal))
     senão
-        retorne Pos(tamanho(octal))
+        retorne Transformar(tamanho(octal))
     fim se
 fim função

@@ -2,9 +2,6 @@ função BaseBinaria(decimal: string): inteiro
 var
     função VerificaString(i: inteiro): lógico
     início
-        se i = 0 então
-            retorne falso
-        fim se
         se i = 1 então
             retorne decimal[i] = '-' ou ('0' <= decimal[i] e decimal[i] <= '9')
         fim se
@@ -18,7 +15,7 @@ var
             fim se
             retorne asc(decimal[i] - asc('0'))
         fim se
-        retorne TransformarParaInteiro(i - 1)*10 + asc(decimal[i] - asc('0'))
+        retorne TransformarParaInteiro(i - 1)*10 + asc(decimal[i]) - asc('0')
     fim função
     função DecimalParaBinario(num: inteiro): inteiro
     início
