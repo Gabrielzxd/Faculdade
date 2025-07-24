@@ -4,8 +4,10 @@ var
     início
         se bin = 0 ou bin = 1 então
             retorne verdadeiro
+        senão
+            retorne falso
         fim se
-        retorne VerificaBinario(bin div 10) e (0 <= bin mod 10 e bin mod 10 <= 1)
+        retorne VerificaBinario(bin div 10) e 0 <= bin mod 10 e bin mod 10 <= 1
     fim função
 início
     se bin < 0 então

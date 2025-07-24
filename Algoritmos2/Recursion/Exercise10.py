@@ -18,7 +18,7 @@ def DecimalStringForBinary(decimal: str) -> int:
             return decimal
         else:
             return (DecimalToBinary(decimal // 2))*10 + decimal % 2
-    if(not(VerifyString(len(decimal) - 1))):
+    if(not(VerifyString(len(decimal) - 1)) or len(decimal) == 0):
         return -999999
     else:
         num = StringForInteger(len(decimal) - 1)

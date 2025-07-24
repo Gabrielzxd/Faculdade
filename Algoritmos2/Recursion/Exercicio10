@@ -8,7 +8,7 @@ var
         se i = 1 então
             retorne decimal[i] = '-' ou ('0' <= decimal[i] e decimal[i] <= '9')
         fim se
-        retorne VerificaString(i - 1) e ('0' <= decimal[i] e decimal[i] <= '9')
+        retorne VerificaString(i - 1) e '0' <= decimal[i] e decimal[i] <= '9'
     fim função
     função TransformarParaInteiro(i: inteiro): inteiro
     início

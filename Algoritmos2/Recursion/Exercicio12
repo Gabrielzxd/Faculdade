@@ -5,7 +5,7 @@ var
         se i = 1 então
             retorne octal[i] = '-' ou '0' <= octal[i] e octal[i] <= '7'
         fim 
-        retorne VerificaOctal(i - 1) e ('0' <= octal[i] e octal[i] <= '7')
+        retorne VerificaOctal(i - 1) e '0' <= octal[i] e octal[i] <= '7'
     fim função
     função Pos(i: inteiro): inteiro
     início

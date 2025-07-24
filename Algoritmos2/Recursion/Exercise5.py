@@ -7,9 +7,7 @@ def NumberTimesNumberInOuther(a, b: int) -> int:
         if(a % 10 == b):
             return 1 + Digit_Count(a // 10, b)
         return Digit_Count(a // 10, b)
-    if(a < 0 or b < 0):
-        return FLAG
-    if(b > 9):
+    if(a < 0 or b < 0 or b > 9):
         return FLAG
     if(a == 0 and b == 0):
         return 1
