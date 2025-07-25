@@ -22,6 +22,8 @@ início
     se tamanho(s) = 0 ou não VerificaOctal(octal) então
         retorne -999999
     fim se
+    se tamanho(s) = 1 e octal[1] = '-' então
+        retorne -999999
     se octal[1] = '-' então
         retorne - Transformar(tamanho(octal))
     senão
