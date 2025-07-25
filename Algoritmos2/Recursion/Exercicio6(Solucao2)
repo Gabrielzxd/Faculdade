@@ -1,0 +1,18 @@
+const
+    MAX = 100
+tipos
+    vet = vetor[1..MAX] de string
+var
+    função MenorString(nomes: vet; tam: inteiro): string
+    var
+        menor: string
+    início
+        se tam = 1 então
+            retorne menor
+        fim se
+        menor <- MenorString(tam - 1)
+        se nomes[i] < menor então
+            menor <- nomes[i]
+        fim se
+        retorne menor
+    fim função

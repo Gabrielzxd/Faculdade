@@ -6,11 +6,11 @@ var
             retorne ""
         fim se
         se 'A' <= s[i] e s[i] <= 'Z' então
-            retorne Posição(i - 1) + chr(asc(s[i] - asc('A') + asc('a')))
+            retorne Posição(i - 1) + chr(asc(s[i] )- asc('A') + asc('a'))
         senão
             retorne Posição(i - 1) + s[i]
         fim se
     fim função
 início
-    retorne Posição(tamanho(s) - 1)
+    retorne Posição(tamanho(s))
 fim função

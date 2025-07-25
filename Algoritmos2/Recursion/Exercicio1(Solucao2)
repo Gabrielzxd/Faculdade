@@ -1,0 +1,18 @@
+função StringMinuscula(s: string): string
+var
+    procedimento Transformar(i: inteiro)
+    início
+        se i > 0 então
+            se 'A' <= s[i] e s[i] <= 'Z' então
+                s[i] <- chr(asc(s[i]) - asc('A') + asc('a'))
+                Transformar(i-1)
+            fim se
+            Transformar(i-1)
+        fim se
+    fim procedimento
+início
+    se tamanho(s) = 0 então
+        retorne ""
+    fim se
+    retorne Transformar(tamanho(s))
+fim função
