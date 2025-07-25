@@ -36,7 +36,7 @@ var
     fim função
     num: inteiro
 início
-    se não VerificaStringHexadecimal(tamanho(hexa)) ou tamanho(hexa) = 0 então
+    se tamanho(hexa) = 0 ou não VerificaStringHexadecimal(tamanho(hexa)) então
         retorne ""
     fim se
     num <- TransformaParaInteiro(tamanho(hexa))

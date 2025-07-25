@@ -10,12 +10,14 @@ def OctalStringForDecimal(octal: str) -> int:
             else:
                 return ord(octal[i]) - ord('0')
         return Pos(i - 1)*8 +  ord(octal[i]) - ord('0')
-    if(not(IsOctal(len(octal) - 1))):
+    if(len(octal) == 0 or not(IsOctal(len(octal) - 1))):
+        return -999999
+    if len(octal) == 1 and octal[0] == '-':
         return -999999
     if(octal[0] == '-'):
         return -Pos(len(octal) - 1)
     else:
         return Pos(len(octal) - 1)
 
-NumTest = "-185"
+NumTest = "-"
 print(OctalStringForDecimal(NumTest))

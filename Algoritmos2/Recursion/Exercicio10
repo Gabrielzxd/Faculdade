@@ -26,7 +26,7 @@ var
     fim função
     numero: inteiro
 início
-    se não VerificaString(tamanho(decimal)) ou tamanho(decimal) = 0 então
+    se tamanho(decimal) = 0 ou não VerificaString(tamanho(decimal)) então
         pare
     fim se
     numero <- TransformarParaInteiro(tamanho(decimal))

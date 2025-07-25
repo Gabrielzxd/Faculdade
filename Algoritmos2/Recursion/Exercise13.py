@@ -25,7 +25,7 @@ def HexadecimalStringToDecimalString(hexa: str) -> str:
                 return chr(number + ord('0'))
             else:
                 return TransformerIntegerToString(number // 10) + chr(number % 10 + ord('0'))
-    if(not(IsHexadecimal(len(hexa) - 1)) or len(hexa) == 0):
+    if(len(hexa) == 0 or not(IsHexadecimal(len(hexa) - 1))):
         return ""
     else:
         num = TransformerToInteger(len(hexa) - 1)

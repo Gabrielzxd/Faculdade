@@ -19,7 +19,7 @@ var
         retorne Transformar(i-1)*8 + asc(octal[i]) - asc('0')
     fim função
 início
-    se não VerificaOctal(octal) ou tamanho(s) = 0 então
+    se tamanho(s) = 0 ou não VerificaOctal(octal) então
         retorne -999999
     fim se
     se octal[1] = '-' então
