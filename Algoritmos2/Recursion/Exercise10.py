@@ -20,14 +20,15 @@ def DecimalStringForBinary(decimal: str) -> int:
             return (DecimalToBinary(decimal // 2))*10 + decimal % 2
     if(len(decimal) == 0 or not(VerifyString(len(decimal) - 1))):
         return -999999
+    if(len(decimal) == 1 and decimal[0] == '-'):
+        return -999999
+    num = StringForInteger(len(decimal) - 1)
+    if(decimal[0] == '-'):
+        return - DecimalToBinary(num)
     else:
-        num = StringForInteger(len(decimal) - 1)
-        if(decimal[0] == '-'):
-            return - DecimalToBinary(num)
-        else:
-            return DecimalToBinary(num)
+        return DecimalToBinary(num)
         
-Test = "-14"
+Test = "-"
 print(DecimalStringForBinary(Test))
 
     

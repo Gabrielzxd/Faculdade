@@ -27,7 +27,10 @@ var
     numero: inteiro
 início
     se tamanho(decimal) = 0 ou não VerificaString(tamanho(decimal)) então
-        pare
+        retorne -999999
+    fim se
+    se tamanho(decimal) = 1 e decimal[1] = '-' então
+        retorne -999999
     fim se
     numero <- TransformarParaInteiro(tamanho(decimal))
     se decimal[1] = '-' então

@@ -39,6 +39,9 @@ início
     se tamanho(hexa) = 0 ou não VerificaStringHexadecimal(tamanho(hexa)) então
         retorne ""
     fim se
+    se tamanho(hexa) = 0 e hexa[1] = '-' então
+        retorne ""
+    fim se
     num <- TransformaParaInteiro(tamanho(hexa))
     se hexa[1] = '-' então
         retorne '-' + TransformaParaStringDecimal(num)

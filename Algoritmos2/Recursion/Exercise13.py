@@ -27,12 +27,13 @@ def HexadecimalStringToDecimalString(hexa: str) -> str:
                 return TransformerIntegerToString(number // 10) + chr(number % 10 + ord('0'))
     if(len(hexa) == 0 or not(IsHexadecimal(len(hexa) - 1))):
         return ""
+    if(len(hexa) == 1 or hexa[0] == '-'):
+        return ""
+    num = TransformerToInteger(len(hexa) - 1)
+    if(hexa[0] == '-'):
+        return '-' + TransformerIntegerToString(num)
     else:
-        num = TransformerToInteger(len(hexa) - 1)
-        if(hexa[0] == '-'):
-            return '-' + TransformerIntegerToString(num)
-        else:
-            return TransformerIntegerToString(num)
+        return TransformerIntegerToString(num)  
 
 
 HexaTest = "-1A1"
