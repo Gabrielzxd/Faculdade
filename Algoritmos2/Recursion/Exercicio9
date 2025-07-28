@@ -6,7 +6,7 @@ var
             retorne ""
         fim se
         se decimal < 0 então
-            retorne "-" + Transformar(-decimal)
+            retorne '-' + Transformar(-decimal)
         fim se
         se decimal mod 16 >= 10 então
             retorne Transformar(decimal div 16) + chr(decimal mod 16 - 10 + asc('A'))
