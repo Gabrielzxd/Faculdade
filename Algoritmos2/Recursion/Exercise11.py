@@ -4,6 +4,8 @@ def BinaryForDecimal(binary: int) -> int:
             return True
         return IsBinary(binary // 10) and (0 <= binary % 10 <= 1)
     if binary < 0:
+        if(not(IsBinary(-binary))):
+            return -999999
         return - BinaryForDecimal(-binary)
     if(not(IsBinary(binary))):
             return -999999
@@ -11,5 +13,5 @@ def BinaryForDecimal(binary: int) -> int:
         return binary
     return BinaryForDecimal(binary // 10) * 2 + binary % 10
 
-NumTest = -101
+NumTest = 101
 print(BinaryForDecimal(NumTest))
