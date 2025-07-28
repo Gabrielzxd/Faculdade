@@ -4,7 +4,7 @@ def MDC(a, b: int) -> int:
     if b > a:
         aux = b
         b = a
-        a = b
+        a = aux
     if a % b == 0:
         return b
     return MDC(b, a % b)

@@ -1,14 +1,23 @@
 função BaseHexadecimal(decimal: inteiro): string
 var
+    função Transformar(decimal: inteiro): string
+    início
+        se decimal = 0 então
+            retorne ""
+        fim se
+        se decimal < 0 então
+            retorne "-" + Transformar(-decimal)
+        fim se
+        se decimal mod 16 >= 10 então
+            retorne Transformar(decimal div 16) + chr(decimal mod 16 - 10 + asc('A'))
+        senão
+            retorne Transformar(decimal div 16) + chr(decimal mod 16 + asc('0'))
+        fim se
+    fim função
+início
     se decimal = 0 então
-        retorne ""
-    fim se
-    se decimal < 0 então
-        retorne "-" + BaseHexadecimal(-decimal)
-    fim se
-    se decimal mod 16 >= 10 então
-        retorne BaseHexadecimal(decimal div 16) + chr(decimal mod 16 - 10 + asc('A'))
+        retorne "0"
     senão
-        retorne BaseHexadecimal(decimal div 16) + chr(decimal mod 16 + asc('0'))
+        retorne Transformar(decimal)
     fim se
 fim função

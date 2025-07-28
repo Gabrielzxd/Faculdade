@@ -1,12 +1,17 @@
 def HexadecimalBase(decimal: int) -> str:
-    if(decimal == 0):
-        return ""
-    if(decimal < 0):
-        return "-" + HexadecimalBase(-decimal)
-    if(decimal % 16 >= 10):
-        return HexadecimalBase(decimal // 16) + chr(decimal % 16 - 10 + ord('A'))
+    def Transform(decimal: int) -> str:
+        if(decimal == 0):
+            return ""
+        if(decimal < 0):
+            return "-" + Transform(-decimal)
+        if(decimal % 16 >= 10):
+            return Transform(decimal // 16) + chr(decimal % 16 - 10 + ord('A'))
+        else:
+            return Transform(decimal // 16) + chr(decimal % 16 + ord('0'))
+    if decimal == 0:
+        return "0"
     else:
-        return HexadecimalBase(decimal // 16) + chr(decimal % 16 + ord('0'))
+        return Transform(decimal)
 
-NumTest = 145
+NumTest = 16
 print(HexadecimalBase(NumTest))
