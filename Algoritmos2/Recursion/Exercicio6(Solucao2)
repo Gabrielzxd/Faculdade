@@ -8,10 +8,10 @@ var
         menor: string
     início
         se tam = 1 então
-            retorne menor
+            retorne nomes[1]
         fim se
-        menor <- MenorString(tam - 1)
-        se nomes[i] < menor então
+        menor <- MenorString(nomes, tam - 1)
+        se nomes[tam] < menor então
             menor <- nomes[i]
         fim se
         retorne menor
