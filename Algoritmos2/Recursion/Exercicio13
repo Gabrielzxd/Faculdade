@@ -29,9 +29,6 @@ var
         se num = 0 então
             retorne ""
         fim se
-        se num < 9 então
-            retorne chr(num + asc('0'))
-        fim se
         retorne TransformaParaStringDecimal(num div 10) + chr(num % 10 + asc('0'))
     fim função
     num: inteiro
