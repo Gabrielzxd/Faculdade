@@ -12,7 +12,7 @@ var
         fim se
         menor <- MenorString(nomes, tam - 1)
         se nomes[tam] < menor então
-            menor <- nomes[i]
+            menor <- nomes[tam]
         fim se
         retorne menor
     fim função

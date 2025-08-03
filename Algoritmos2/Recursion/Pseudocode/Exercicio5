@@ -14,7 +14,7 @@ var
             retorne Contagem(a div 10, b)
         fim função
     início
-        se a <= 0 ou b <= 0 ou b > 9 então
+        se a <= 0 ou b < 0 ou b > 9 então
             retorne flag
         fim se
         QntVezesAlgarismoNoNumero(a, b)
