@@ -1,0 +1,29 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: string
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+        fim registro
+var
+    função StringCentralizadaNaLista(ref l: PNo): string
+    var
+        tam, i: inteiro
+        p_aux: PNo
+    início
+        tam <- 0
+        p_aux <- l
+        se l != Nulo então
+            tam <- tam + 1
+            l <- l^prox
+        fim se
+        se tam = 0 então
+            retorne ""
+        fim se
+        i <- 1
+
+    fim função

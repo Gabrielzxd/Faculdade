@@ -1,0 +1,29 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: string
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+        fim registro
+var
+    função MaiorValor(ref l: PNo): string
+    var
+        maior: string
+    início
+        se l = Nulo então
+            retorne ""
+        fim se
+        maior <- l^info.valor
+        l <- l^prox
+        enquanto l != Nulo faça
+            se l^info.valor > maior então
+                maior <- l^info.valor
+            fim se
+            l <- l^info
+        fim enquanto
+        retorne maior
+    fim função

@@ -1,0 +1,24 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: real
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+        fim registro
+var
+    função TamanhoListaEncadeada(ref l: PNo): inteiro
+    var
+        tam: inteiro
+        atual: PNo
+    início
+        tam <- 0
+        enquanto l != Nulo faça
+            tam <- tam + 1
+            l <- l^prox
+        fim enquanto
+        retorne tam
+    fim função

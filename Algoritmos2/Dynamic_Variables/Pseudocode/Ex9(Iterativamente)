@@ -1,0 +1,13 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: string
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+        fim registro
+var
+    função 

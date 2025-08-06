@@ -1,0 +1,22 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: real
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+        fim registro
+var
+    função VerificaSeElementoEstaNaLista(x: real; ref l: PNo): lógico
+    início
+        enquanto l != Nulo faça
+            se l^info.valor = x então
+                retorne verdadeiro
+            fim se
+            l <- l^prox
+        fim enquanto
+        retorne falso
+    fim função

@@ -1,0 +1,23 @@
+tipos
+    TChave = inteiro
+    TInfo = registro
+            valor: real
+            chave: TChave
+        fim registro
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: TInfo
+            prox: PNo
+var
+    função QuantidadeXNaLista(x: real; ref l: PNo): inteiro
+    var
+        qnt: inteiro
+    início
+        se l = Nulo então
+            retorne 0
+        fim se
+        se l^info.valor = x então
+            retorne 1 + QuantidadeXNaLista(x, l^prox)
+        fim se
+        retorne QuantidadeXNaLista(x, l^prox)
+    fim função
