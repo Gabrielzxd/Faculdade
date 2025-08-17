@@ -25,5 +25,5 @@ var
             retorne ""
         fim se
         i <- 1
-
+        
     fim função
