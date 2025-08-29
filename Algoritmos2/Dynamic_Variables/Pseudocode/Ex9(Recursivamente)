@@ -1,0 +1,20 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: PNo
+        fim registro
+var
+    função VerificaSeElementosAparecemJuntos(x, y: real; l: PNo): lógico
+    var
+        achou: lógico
+    início
+         se l = nulo e l^.prox = nulo então
+            retorne falso
+        fim se
+        se l^.info = x e l^.prox^.info = y então
+            retorne verdadeiro
+        senão
+            retorne VerificaSeElementosAparecemJuntos(x, y, l^.prox)
+        fim se
+    fim função

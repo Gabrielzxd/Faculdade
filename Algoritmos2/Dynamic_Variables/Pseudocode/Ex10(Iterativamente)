@@ -1,14 +1,26 @@
 tipos
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: real
             prox: PNo
         fim registro
 var
-    função VerificaSeElementosAparecemEmOrdem(x, y: real; l: PNo): real
+    função VerificaSeElementosAparecemEmOrdem(x, y: real; l: PNo): lógico
     var
         achou: lógico
     início
-        achou <- falso
-        enquanto l != Nulo ou
+        enquanto l != Nulo e l^.info != x faça
+            l <- l^.prox
+        fim enquanto
+        se l = Nulo então
+            retorne falso
+        fim se
+        enquanto l != Nulo e l^.info != y faça
+            l <- l^.prox
+        fim enquanto
+        se l = Nulo então
+            retorne falso
+        senão
+            retorne verdadeiro
+        fim se
     fim função

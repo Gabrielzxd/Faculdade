@@ -1,23 +1,17 @@
 tipos
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: real
             prox: PNo
         fim registro
 var
     função VerificaSeElementosAparecemJuntos(x, y: real; l: PNo): lógico
-    var
-        achou: lógico
-        ant: PNo
     início
-        achou <- falso
-        enquanto l != Nulo faça
-            ant <- l
-            l <- l^prox
-            achou <- ant^info.valor = x e l^info.valor = y
-            se achou então
-                retorne achou
+        enquanto l != Nulo e l^.prox != Nulo faça
+            se l^.info = x e l^.prox^.info = y então
+                retorne verdadeiro
             fim se
+            l <- l^.prox
         fim enquanto
-        retorne achou
+        retorne falso
     fim função
