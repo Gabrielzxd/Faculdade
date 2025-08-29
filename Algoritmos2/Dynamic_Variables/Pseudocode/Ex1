@@ -1,16 +1,11 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: inteiro
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
-            Info: TInfo
+            info: inteiro
             prox: PNo
         fim registro
 var
-    função VerificaSeListaVazia(ref l: PNo): lógico
+    função VerificaSeListaVazia(l: PNo): lógico
     início
         retorne l = Nulo
     fim função

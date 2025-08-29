@@ -1,23 +1,21 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: inteiro
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: inteiro
             prox: PNo
         fim registro
 var
-    função MediaAritmeticaListaEncadeada(ref l: PNo): real
+    função MediaAritmeticaListaEncadeada(l: PNo): real
     var
         soma, tam: inteiro
     início
+        se l = Nulo então
+            retorne 0
+        fim se
         soma <- 0
-        tam <- 0
+        tam <- 1
         enquanto l != Nulo faça
-            soma <- soma + l^info.valor
+            soma <- soma + l^.info
             tam <- tam + 1
             l <- l^prox
         fim enquanto

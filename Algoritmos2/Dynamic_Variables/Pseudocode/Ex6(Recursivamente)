@@ -1,0 +1,22 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+var
+    função StringNaPosiçãoDada(p: inteiro; l: PNo): string
+    var
+        função Posição (i: inteiro): string
+            se l = Nulo então
+                retorne ""
+            fim se
+            se i = p então
+                retorne l^.info
+            senao
+                retorne Posição(i+1)
+            fim se            
+        fim função
+    início
+        retorne Posição(1)
+    fim função

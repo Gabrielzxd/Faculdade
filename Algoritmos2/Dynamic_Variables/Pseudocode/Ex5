@@ -1,0 +1,33 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+var
+    função StringCentralizadaNaLista(l: PNo): string
+    var
+        tam, i: inteiro
+        p, ant: PNo
+    início
+        tam <- 1
+        p <- l
+        enquanto l != Nulo faça
+            tam <- tam + 1
+            l <- l^.prox
+        fim enquanto
+        se tam = 0 ou tam = 2 então
+            retorne ""
+        fim se
+        i <- 1
+        enquanto i < tam div 2 faça
+            ant <- p
+            p <- p^.prox
+            i <- i + 1
+        fim enquanto
+        se tam div 2 = 0 então
+            retorne ant^.info
+        senão
+            retorne p^.info
+        fim se
+    fim função

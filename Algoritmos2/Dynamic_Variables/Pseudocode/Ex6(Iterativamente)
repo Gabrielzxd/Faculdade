@@ -1,23 +1,18 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: string
-            chave: inteiro
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: string
             prox: PNo
         fim registro
 var
-    função StringNaPosiçãoDada(p: inteiro; ref l: PNo): string
+    função StringNaPosiçãoDada(p: inteiro; l: PNo): string
     var
         i: inteiro
     início
         i <- 1
         enquanto l != Nulo faça
             se i = p então
-                retorne l^info.valor
+                retorne l^.info
             fim se
             i <- i + 1
             l <- l^prox

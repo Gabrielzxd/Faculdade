@@ -1,22 +1,17 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: real
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: real
             prox: PNo
         fim registro
 var
-    função VerificaSeElementoEstaNaLista(x: real; ref l: PNo): lógico
+    função VerificaSeElementoEstaNaLista(x: real; l: PNo): lógico
     início
-        enquanto l != Nulo faça
-            se l^info.valor = x então
+        enquanto l != Nulo faça 
+            se l^.info = x então
                 retorne verdadeiro
             fim se
-            l <- l^prox
+            l <- l^.prox
         fim enquanto
         retorne falso
     fim função

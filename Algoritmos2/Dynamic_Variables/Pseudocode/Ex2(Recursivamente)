@@ -1,18 +1,13 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: real
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
-            info: TInfo
+            info: real
             prox: PNo
 var
-    função TamanhoListaEncadeada(ref l: PNo): inteiro
+    função TamanhoListaEncadeada(l: PNo): inteiro
     início
         se l = Nulo então
             retorne 0
         fim se
-        retorne 1 + TamanhoListaEncadeada(l^prox)
+        retorne 1 + TamanhoListaEncadeada(l^.prox)
     fim função

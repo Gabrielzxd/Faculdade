@@ -1,16 +1,11 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: inteiro
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
             info: TInfo
             prox: PNo
         fim registro
 var
-    função VerificaSeElementosAparecemEmOrdem(x, y: real; ref l: PNo): real
+    função VerificaSeElementosAparecemEmOrdem(x, y: real; l: PNo): real
     var
         achou: lógico
     início

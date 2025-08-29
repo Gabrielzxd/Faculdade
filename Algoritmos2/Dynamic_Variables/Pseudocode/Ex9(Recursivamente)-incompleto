@@ -1,16 +1,11 @@
 tipos
-    TChave = inteiro
-    TInfo = registro
-            valor: real
-            chave: TChave
-        fim registro
     PNo = ponteiro para TNo
     TNo = registro
             info: TInfo
             prox: PNo
         fim registro
 var
-    função VerificaSeElementosAparecemJuntos(x, y: real; ref l: PNo): lógico
+    função VerificaSeElementosAparecemJuntos(x, y: real; l: PNo): lógico
     início
         se l = Nulo então
             retorne falso
