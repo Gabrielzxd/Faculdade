@@ -11,6 +11,7 @@ var
     res, novo: PNo
 início
     ant <- Nulo
+    res <- Nulo
     enquanto l != Nulo e p!= Nulo faça
         novo <- aloca(TNo)
         se novo = Nulo então

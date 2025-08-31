@@ -17,14 +17,28 @@ início
         fim se
         novo^.info <- x
         novo^.prox <- l
+        novo^.prev <- Nulo
         se l != Nulo então
             l^.prev <- novo
-        senão
-            novo^.prev <- Nulo
         fim se
         l <- novo
         retorne verdadeiro
     senão
         se l^.prox = Nulo ou l^.prox^.info > x então
-
+            novo <- aloca(TNo)
+            se novo = Nulo então
+                retorne falso
+            fim se
+            novo^.info <- x
+            novo^.prox <- l^.prox
+            novo^.prev <- l
+            se l^.prox != Nulo então
+                l^.prox^.prev <- novo
+            fim se
+            l^.prox <- novo
+            retorne verdadeiro
+        senão
+            retorne InsereNaLista(l^.prox, x)
+        fim se
+    fim se
 fim função
