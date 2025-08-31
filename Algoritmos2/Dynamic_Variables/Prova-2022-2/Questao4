@@ -1,0 +1,76 @@
+tipos
+    PPoli = ponteiro para TPoli
+    TNo = registro
+            coef: real
+            exp: real
+            prox: PNo
+        fim registro
+
+função SomaPolinômios(p1, p2: PNo): PNo
+var
+    res, novo: PNo
+início
+    ant <- Nulo
+    enquanto l != Nulo e p!= Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se 
+        se l^.exp > p^.exp então
+            novo^.coef <- l^.coef
+            novo^.exp <- l^.exp
+            l <- l^.prox
+        senão
+            se p^.exp > l^.exp então
+                novo^.coef <- p^.coef
+                novo^.exp <- p^.exp
+                p <- p^.prox
+            senão
+                novo^.coef <- p^.coef + l^.coef
+                novo^.exp <- p^.exp
+                l <- l^.prox
+                p <- p^.prox
+            fim se
+        fim se
+        se ant = Nulo então
+            res <- novo
+            ant <- novo
+        senão
+            ant^.prox <- novo
+            ant <- novo
+        fim se
+    fim enquanto
+    enquanto l != Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.coef <- l^.coef
+        novo^.exp <- l^.exp
+        l <- l^.prox
+        se ant = Nulo então
+            res <- novo
+            ant <- novo
+        senão
+            ant^.prox <- novo
+            ant <- novo
+        fim se
+    fim enquanto
+    enquanto p != Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.coef <- p^.coef
+        novo^.exp <- p^.exp
+        p <- p^.prox
+        se ant = Nulo então
+            res <- novo
+            ant <- novo
+        senão
+            ant^.prox <- novo
+            ant <- novo
+        fim se
+    fim enquanto
+    retorne verdadeiro
+fim função

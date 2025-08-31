@@ -7,10 +7,13 @@ tipos
         fim registro
 
 procedimento InverteArvoreBinaria (ref l: PNo)
+var
+    aux: real
 início
     se l != Nulo então
+        aux <- l^.esq
         l^.esq <- l^.dir
-        l^.dir <- l^.esq
+        l^.dir <- aux
         InverteArvoreBinaria(l^.dir)
         InverteArvoreBinaria(l^.esq)
     fim se

@@ -5,7 +5,7 @@ tipos
             prox: PNo
         fim registro
 
-função JuntaDoisElementos(ref l: PNo; p: inteiro): lógico
+função JuntarDuasPosições(ref l: PNo; p: inteiro): lógico
 var
     função Posição(p: PNo; i: inteiro): lógico
     var

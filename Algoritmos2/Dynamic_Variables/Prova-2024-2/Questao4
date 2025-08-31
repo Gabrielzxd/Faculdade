@@ -12,14 +12,13 @@ var
 início
     ant <- Nulo
     enquanto l != Nulo faça
+        ant <- l
         se l^info < ch então
-            ant <- l
             l <- l^.dir
         senão
             se l^.info = ch então
                 retorne falso
             senão
-                ant <- l
                 l <- l^.esq
             fim se
         fim se
@@ -33,9 +32,8 @@ início
     novo^.dir <- Nulo
     se ant = Nulo então
         l <- novo
-        retorne verdadeiro
     fim se  
-    se l^.esq = Nulo então
+    se ant^.esq = Nulo então
         ant^.esq <- novo
     senão
         ant^.dir <- novo

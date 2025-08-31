@@ -1,0 +1,30 @@
+tipos
+    PNo - ponteiro para TNo
+    TNo = registro
+            info: string
+            prev: PNo
+            prox: PNo
+        fim registro
+
+função InsereNaLista(ref l: PNo; x: string): lógico
+var
+    novo: PNo
+início
+    se l = Nulo ou l^.info > x então
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.info <- x
+        novo^.prox <- l
+        se l != Nulo então
+            l^.prev <- novo
+        senão
+            novo^.prev <- Nulo
+        fim se
+        l <- novo
+        retorne verdadeiro
+    senão
+        se l^.prox = Nulo ou l^.prox^.info > x então
+
+fim função
