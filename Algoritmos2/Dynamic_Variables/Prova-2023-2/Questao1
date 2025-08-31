@@ -1,0 +1,25 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: PNo
+        fim registro
+
+função ListaEmOrdemAscendente(l: PNo): lógico
+var
+    ant: PNo
+início
+    se l != Nulo e l^.prox = Nulo então
+        retorne verdadeiro
+    senão
+        se l = Nulo então
+            retorne falso
+        senão
+            se l^.info < l^.prox^.info então
+                retorne ListaEmOrdemAscendente(l^.prox)
+            senão
+                retorne falso
+            fim se
+        fim se
+    fim se
+fim função

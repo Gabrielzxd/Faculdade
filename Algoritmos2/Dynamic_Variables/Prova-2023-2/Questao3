@@ -1,0 +1,14 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: caracter
+            prox: PNo
+        fim registro
+
+procedimento InverteLista(ref l: PNo)
+var
+    ant, atual: PNo
+início
+    
+
+fim procedimento

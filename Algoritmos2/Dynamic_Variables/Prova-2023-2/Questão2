@@ -1,0 +1,26 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: PNo
+        fim registro
+
+função VerificaSeElementosAparecemEmOrdem(l: PNo; x, y: real): lógico
+var
+    função ProcuraElementos(l: PNo; verificaX: lógico): lógico
+    início
+        se l = Nulo então
+            retorne falso
+        fim se
+        se l^.info = x então
+            retorne ProcuraElementos(l^.prox, verdadeiro)
+        fim se
+        se verificaX e l^.info = y então
+            retorne verdadeiro
+        senão
+            retorne ProcuraElementos(l^.prox, verdadeiro)
+        fim se
+    fim função
+início
+    retorne ProcuraElementos(l, falso)
+fim função

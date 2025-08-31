@@ -1,0 +1,26 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: PNo
+        fim registro
+
+função JuntaDoisElementos(ref l: PNo; p: inteiro): lógico
+var
+    função Posição(p: PNo; i: inteiro): lógico
+    var
+        lixo: PNo
+    início
+        se p = Nulo ou p^.prox = Nulo então
+            retorne falso
+        fim se
+        se i < p então
+            retorne Posição(p^.prox, i+1)
+        senão
+            lixo <- p^.prox
+            p^.info <- p^.info + p^.prox^.info
+            p^.prox <- p^.prox^.prox
+            desaloca(lixo)
+            retorne verdadeiro
+        fim se
+    fim função
