@@ -1,0 +1,20 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: caracter
+            prox: PNo
+        fim registro
+
+procedimento InverteLista(ref l: PNo)
+var
+    ant, prox: PNo
+início
+    ant <- Nulo
+    enquanto l != Nulo faça
+        prox <- l^.prox
+        l^.prox <- ant
+        ant <- l
+        l <- prox
+    fim 
+    l <- ant
+fim procedimento

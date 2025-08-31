@@ -1,0 +1,23 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            chave: inteiro
+            prox: PNo
+        fim registro
+
+função RemoveElemento(ref l: PNo; ch: inteiro): lógico
+var
+    lixo: PNo
+início
+    se l = Nulo então
+        retorne falso
+    fim se
+    se l^.chave != ch então
+        retorne RemoveElemento(l^.prox, ch)
+    senão
+        lixo <- l
+        l <- l^.prox
+        desaloca(lixo)
+        retorne verdadeiro
+    fim se
+fim função

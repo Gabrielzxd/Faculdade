@@ -1,0 +1,17 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            esq: PNo
+            dir: PNo
+        fim registro
+
+procedimento InverteArvoreBinaria (ref l: PNo)
+início
+    se l != Nulo então
+        l^.esq <- l^.dir
+        l^.dir <- l^.esq
+        InverteArvoreBinaria(l^.dir)
+        InverteArvoreBinaria(l^.esq)
+    fim se
+fim procedimento

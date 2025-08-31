@@ -1,0 +1,44 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            esq: PNo
+            dir: PNo
+        fim registro
+
+função InserirNaArvoreBinaria(ref l: PNo; ch: string): lógico
+var
+    novo, ant: PNo
+início
+    ant <- Nulo
+    enquanto l != Nulo faça
+        se l^info < ch então
+            ant <- l
+            l <- l^.dir
+        senão
+            se l^.info = ch então
+                retorne falso
+            senão
+                ant <- l
+                l <- l^.esq
+            fim se
+        fim se
+    fim enquanto
+    novo <- aloca(TNo)
+    se novo = Nulo então
+        retorne falso
+    fim se
+    novo^.info <- ch
+    novo^.esq <- Nulo
+    novo^.dir <- Nulo
+    se ant = Nulo então
+        l <- novo
+        retorne verdadeiro
+    fim se  
+    se l^.esq = Nulo então
+        ant^.esq <- novo
+    senão
+        ant^.dir <- novo
+    fim se
+    retorne verdadeiro
+fim função
