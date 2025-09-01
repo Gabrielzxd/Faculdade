@@ -1,0 +1,22 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função InsereOrdenadoSemRepetir(ref l: PNo; x: string): lógico
+var
+    novo: PNo
+início
+    enquanto l != Nulo e l^.info < x faça
+        l <- l^.prox
+    fim enquanto
+    se l != Nulo e l^.info = x então
+        retorne falso
+    fim se
+    novo^.prox <- l
+    novo^.info <- x
+    l <- novo
+    retorne verdadeiro
+fim função

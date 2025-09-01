@@ -1,0 +1,23 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função InsereNoFinal(ref l: PNo; x: string): lógico
+var
+    novo: PNo
+início
+    novo <- aloca(TNo)
+    se novo = Nulo então
+        retorne falso
+    fim se
+    enquanto l != Nulo faça
+        l <- l^.prox
+    fim enquanto
+    novo^.info <- x
+    novo^.prox <- l
+    l <- novo
+    retorne verdadeiro
+fim função
