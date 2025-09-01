@@ -1,0 +1,22 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função RemoveUltimaPosição(ref l: PNo): lógico
+var
+    lixo: PNo
+início
+    se l = Nulo então
+        retorne falso
+    fim se
+    se l^.prox = Nulo então
+        lixo <- l
+        l <- l^.prox
+        desaloca(lixo)
+        retorne verdadeiro
+    fim se
+    retorne RemoveUltimaPosição(l^.prox)
+fim função

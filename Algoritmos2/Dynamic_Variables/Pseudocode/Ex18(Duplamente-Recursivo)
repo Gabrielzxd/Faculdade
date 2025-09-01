@@ -1,0 +1,19 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prev: PNo
+            prox: PNo
+        fim registro
+
+função InsereNaPosiçãoP(ref l: PNo; x: real): lógico
+var
+    função Insere(ref p: PNo; i: inteiro): lógico
+    var
+        novo: PNo
+    início
+
+    fim função
+início
+
+fim função

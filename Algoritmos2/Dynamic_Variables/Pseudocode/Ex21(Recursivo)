@@ -1,0 +1,30 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função RemoveNaPosiçãoDada(ref l: PNo; p: inteiro): lógico
+var
+    função Remove(p: PNo; i: inteiro): lógico
+    var
+        lixo: PNo
+    início
+        se l = Nulo então
+            retorne falso
+        fim se
+        se i = p então
+            lixo <- l
+            l <- l^.prox
+            desaloca(lixo)
+            retorne 
+        fim se
+        retorne Remove(p^.prox, i+1)
+    fim função
+início
+    se p <= 0 então
+        retorne falso
+    fim se
+    retorne Remove(l, 1)
+fim função

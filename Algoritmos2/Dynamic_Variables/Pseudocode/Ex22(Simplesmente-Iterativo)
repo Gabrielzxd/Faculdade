@@ -1,0 +1,12 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função RemoveDadoElemento(ref l: PNo; x: string): lógico
+var
+    lixo: PNo
+início
+    

@@ -1,0 +1,41 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: 
+        fim registro
+
+função InserirOrdenadoNaPosiçãoDada(ref l: PNo; p: inteiro; x: real): lógico
+var
+    função Aux(ref p: PNo; i: inteiro): lógico
+    var
+        novo: PNo
+    início
+        se p = 0 então
+            novo <- aloca
+            se novo = Nulo então
+                retorne falso
+            fim se
+            novo^.info <- x
+            novo^.prox <- l
+            l <- novo
+            retorne verdadeiro
+        fim se
+        se i = p então
+            novo <- aloca
+            se novo = Nulo então
+                retorne falso
+            fim se
+            novo^.info <- x
+            novo^.prox <- l
+            l <- novo
+            retorne verdadeiro
+        senão
+            retorne Aux(l^.prox, i+1)
+    fim função
+início
+    se p < 0 então
+        retorne falso
+    fim se
+    retorne Aux(l, 1)
+fim função

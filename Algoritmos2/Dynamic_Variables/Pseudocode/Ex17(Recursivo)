@@ -9,5 +9,18 @@ função InsereOrdenadoSemRepetir (ref l: PNo; x: string): lógico
 var
     novo: PNo
 início
-
+    se l = Nulo ou l^.info >= x então
+        se l^.info então
+            retorne falso
+        senão
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.info <- x
+        novo^.prox <- l
+        l <- novo
+        retorne verdadeiro
+    fim se
+    retorne InsereOrdenadoSemRepetir(l^.prox, x)
 fim função

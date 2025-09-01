@@ -1,0 +1,59 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prev: PNo
+            prox: PNo
+        fim registro
+
+função InsereNaPosiçãoP(ref l: PNo; p: inteiro; x: real): lógico
+var
+    novo, ant: PNo 
+    i: inteiro
+início
+    se p < 0 então
+        retorne falso
+    fim se
+    se p = 0 então
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.info <- x
+        novo^.prox <- l
+        novo^.prev <- Nulo
+        se l != Nulo então
+            l^.prev <- novo
+        fim se
+        l <- novo
+        retorne verdadeiro
+    fim 
+    i <- 1
+    enquanto l != Nulo e i < p faça
+        ant <- l
+        l <- l^.prox
+        i <- i + 1
+    fim enquanto
+    se l = Nulo e i != p então
+        retorne falso
+    fim se
+    se i = p 
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne falso
+        fim se
+        novo^.info <- x
+        se l = Nulo então
+            novo^.prox <- l
+            novo^.prev <- ant
+            l <- novo
+            retorne verdadeiro
+        senão
+            novo^.prox <- l
+            novo^.prev <- ant
+            l^.prev <- novo
+            l <- novo
+            retorne verdadeiro
+        fim se
+    fim se
+fim função

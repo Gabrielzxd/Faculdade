@@ -1,0 +1,28 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função RemoveEmDadaPosição(ref l: PNo; p: inteiro): lógico
+var
+    lixo: PNo
+    i: inteiro
+início
+    se p <= 0 então
+        retorne falso
+    fim se
+    i <- 1
+    enquanto l != Nulo e i < p faça
+        l <- l^.prox
+        i <- i + 1
+    fim enquantoo
+    se l = Nulo então
+        retorne falso
+    fim se
+    lixo <- l
+    l <- l^.prox
+    desaloca(lixo)
+    retorne verdadeiro
+fim função
