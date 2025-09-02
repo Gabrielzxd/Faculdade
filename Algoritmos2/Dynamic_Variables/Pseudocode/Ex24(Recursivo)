@@ -1,0 +1,34 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: real
+            prox: PNo
+        fim registro
+
+função RemoveDuplicados(ref l: PNo): inteiro
+var
+    removidos: inteiro
+    função Remove(ref p: PNo; valor: real): inteiro
+    var
+        lixo: PNo
+    início
+        se p = Nulo então
+            retorne 0
+        fim se
+
+        se p^.info = valor então
+            lixo <- p
+            p <- p^.prox
+            desaloca(lixo)
+            retorne 1 + Remove(p, valor)
+        senão
+            retorne Remove(p^.prox, valor)
+        fim se
+    fim função
+início
+    se l = Nulo então
+        retorne 0
+    fim se
+    removidos <- Remove(l^.prox, l^.info)
+    retorne removidos + RemoveDuplicados(l^.prox)
+fim função

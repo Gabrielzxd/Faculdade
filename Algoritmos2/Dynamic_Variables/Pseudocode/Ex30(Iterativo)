@@ -1,0 +1,89 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            coef: real
+            exp: real
+            prox: PNo
+        fim registro
+
+função SomaPolinômios(p1, p2: PNo): PNo
+var
+    res, novo: PNo
+início
+    ant <- Nulo
+    res <- Nulo
+    enquanto l != Nulo e p!= Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne Nulo
+        fim se
+        se l^.exp > p^.exp então
+            novo^.coef <- l^.coef
+            novo^.exp <- l^.exp
+            l <- l^.prox
+        senão
+            se p^.exp > l^.exp então
+                novo^.coef <- p^.coef
+                novo^.exp <- p^.exp
+                p <- p^.prox
+            senão
+                novo^.coef <- p^.coef + l^.coef
+                novo^.exp <- p^.exp
+                l <- l^.prox
+                p <- p^.prox
+            fim se
+        fim se
+        se novo^.coef = 0 então
+            desaloca(novo)
+        senão
+            se ant = Nulo então
+                res <- novo
+                ant <- novo
+            senão
+                ant^.prox <- novo
+                ant <- novo
+            fim se
+        fim se
+    fim enquanto
+    enquanto l != Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne Nulo
+        fim se
+        novo^.coef <- l^.coef
+        novo^.exp <- l^.exp
+        l <- l^.prox
+        se novo^.coef = 0 então
+            desaloca(novo)
+        senão
+            se ant = Nulo então
+                res <- novo
+                ant <- novo
+            senão
+                ant^.prox <- novo
+                ant <- novo
+            fim se
+        fim se
+    fim enquanto
+    enquanto p != Nulo faça
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne Nulo
+        fim se
+        novo^.coef <- p^.coef
+        novo^.exp <- p^.exp
+        p <- p^.prox
+        se novo^.coef = 0 então
+            desaloca(novo)
+        senão
+            se ant = Nulo então
+                res <- novo
+                ant <- novo
+            senão
+                ant^.prox <- novo
+                ant <- novo
+            fim se
+        fim se
+    fim enquanto
+    retorne res
+fim função

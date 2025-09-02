@@ -1,0 +1,25 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            info: string
+            prox: PNo
+        fim registro
+
+função RemoveTodosMaiores(ref l: PNo; x: string): lógico
+var
+    lixo: PNo
+    removeu: lógico
+início
+    removeu <- falso
+    enquanto l != nulo faça
+        se l^.info >= x então
+            lixo <- l
+            l < l^.prox
+            desaloca lixo
+            removeu <- verdadeiro
+        senão
+            l <- l^.prox
+        fim se
+    fim enquanto
+    retorne removeu
+fim função

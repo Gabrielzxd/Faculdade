@@ -1,0 +1,108 @@
+tipos
+    PNo = ponteiro para TNo
+    TNo = registro
+            coef: real
+            exp: real
+            prox: PNo
+        fim registro
+
+função SomaPolinômios(l, p: PNo): PNo
+var
+    função Soma(begin, ant, ref soma, l, p: PNo): PNo
+    var
+        novo: PNo
+    início
+        se l = Nulo e p = Nulo então
+            retorne begin
+        fim se
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne Nulo
+        fim se
+        se l != Nulo e p = Nulo então
+            novo^.info <- p^.coef
+            novo^.exp <- p^.exp
+            se novo^.coef = 0 então
+                desaloca(novo)
+            senão
+                se ant = Nulo então
+                    begin <- novo
+                    ant <- novo
+                senão
+                    ant^.prox <- novo
+                    ant <- novo
+                fim se
+            fim se
+            retorne Soma(begin, ant, soma, l^.prox, p)
+        senão
+            se p != Nulo e l = Nulo então
+                novo^.info <- l^.coef
+                novo^.exp <- l^.exp
+                se novo^.coef = Nulo então
+                    desaloca(novo)
+                senão
+                    se ant = Nulo então
+                        begin <- novo
+                        ant <- novo
+                    senão
+                        ant^.prox <- novo
+                        ant <- novo
+                    fim se
+                fim se
+                retorne Soma(begin, ant, soma, l, p^.prox)
+            senão
+                se l^.exp > p^.exp então
+                    novo^.exp <- l^.exp
+                    novo^.coef <- l^.coef
+                    se novo^.coef = 0 então
+                        desaloca(novo)
+                    senão
+                        se ant = Nulo então
+                            begin <- novo
+                            ant <- novo
+                        senão
+                            ant^.prox <- novo
+                            ant <- novo
+                        fim se
+                    fim se
+                    retorne Soma(begin, ant, soma, l^.prox, p)
+                senão
+                    se p^.exp > l^.exp então
+                        novo^.exp <- p^.exp
+                        novo^.coef <- p^.coef
+                        p <- p^.prox
+                        se novo^.coef = 0 então
+                            desaloca(novo)
+                        senão
+                            se ant = Nulo então
+                                begin <- novo
+                                ant <- novo
+                            senão
+                                ant^.prox <- novo
+                                ant <- novo
+                            fim se
+                        fim se
+                        retorne Soma(begin, ant, soma, l, p^.prox)
+                    senão
+                        novo^.coef <- p^.coef + l^.coef
+                        novo^.exp <- p^.exp
+                        se novo^.coef = 0 então
+                            desaloca(novo)
+                        senão
+                            se ant = Nulo então
+                                begin <- novo
+                                ant <- novo
+                            senão
+                                ant^.prox <- novo
+                                ant <- novo
+                            fim se
+                        fim se
+                        retorne Soma(begin, ant, soma, l^.prox, p^.prox)
+                    fim se
+                fim se
+            fim se
+        fim se
+    fim função
+início
+    retorne Soma(Nulo, Nulo, Nulo, l, p)
+fim função
