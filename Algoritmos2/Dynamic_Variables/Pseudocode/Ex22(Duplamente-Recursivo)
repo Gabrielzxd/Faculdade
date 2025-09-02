@@ -1,17 +1,41 @@
 tipos
     PNo = ponteiro para TNo
     TNo = registro
-            info: string
+            info: real
             prev: PNo
             prox: PNo
         fim registro
 
-função RemoveDadoElemento(ref l: PNo; x: string): lógico
+função RemoveNaPosiçãoP(ref l: PNo; x: real): lógico
 var
-    lixo: PNo
+    função Remove(ant, l: PNo): lógico
+    var
+        lixo: PNo
+    início
+        se l = Nulo então
+            retorne falso
+        fim se
+        se l^.info = x então
+            lixo <- l
+            se ant = Nulo então
+                l <- l^.prox
+            senão
+                se l^.prox = Nulo então
+                    l <- l^.prox
+                senão
+                    l <- l^.prox
+                    l^.prev <- ant
+                fim se
+            fim se
+            desaloca(lixo)
+            retorne verdadeiro
+        senão
+            retorne Remove(l, l^.prox, i+1)
+        fim se
+    fim função
 início
-    se l = Nulo então
+    se p <= 0 então
         retorne falso
     fim se
-        
+    retorne Insere(Nulo, l, 1)
 fim função

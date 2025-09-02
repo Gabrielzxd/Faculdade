@@ -20,7 +20,7 @@ início
     fim se
     lixo <- l
     se ant = Nulo então
-        l <- Nulo
+        l <- l^.prox
     senão
         se l^.prox = Nulo então
             l <- l^.prox
