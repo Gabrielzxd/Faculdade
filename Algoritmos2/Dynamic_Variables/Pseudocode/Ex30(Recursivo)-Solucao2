@@ -1,0 +1,49 @@
+função SomaPolinomios(l, p: PNo): PNo
+var
+    função Soma(l, p, ant, begin: PNo): PNo
+    var
+        novo: PNo
+    início
+        se l = Nulo e p = Nulo então
+            retorne begin
+        fim se
+
+        // cria nó
+        novo <- aloca(TNo)
+        se novo = Nulo então
+            retorne Nulo
+        fim se
+
+        // decide quem copiar
+        se p = Nulo ou (l <> Nulo e l^.exp > p^.exp) então
+            novo^.coef <- l^.coef
+            novo^.exp  <- l^.exp
+            l <- l^.prox
+        senão se l = Nulo ou p^.exp > l^.exp então
+            novo^.coef <- p^.coef
+            novo^.exp  <- p^.exp
+            p <- p^.prox
+        senão
+            novo^.coef <- l^.coef + p^.coef
+            novo^.exp  <- l^.exp
+            l <- l^.prox
+            p <- p^.prox
+        fim se
+
+        // só encadeia se coef ≠ 0
+        se novo^.coef = 0 então
+            desaloca(novo)
+        senão
+            se ant = Nulo então
+                begin <- novo
+            senão
+                ant^.prox <- novo
+            fim se
+            ant <- novo
+        fim se
+
+        retorne Soma(l, p, ant, begin)
+    fim função
+início
+    retorne Soma(l, p, Nulo, Nulo)
+fim função
