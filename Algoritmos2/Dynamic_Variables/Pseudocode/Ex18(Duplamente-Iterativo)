@@ -11,10 +11,10 @@ var
     novo, ant: PNo 
     i: inteiro
 início
-    se p < 0 então
+    se p <= 0 então
         retorne falso
     fim se
-    se p = 0 então
+    se p = 1 então
         novo <- aloca(TNo)
         se novo = Nulo então
             retorne falso

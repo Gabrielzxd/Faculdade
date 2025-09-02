@@ -2,6 +2,7 @@ tipos
     PNo = ponteiro para TNo
     TNo = registro
             info: string
+            prev: PNo
             prox: PNo
         fim registro
 
@@ -9,14 +10,8 @@ função RemoveDadoElemento(ref l: PNo; x: string): lógico
 var
     lixo: PNo
 início
-    enquanto l != Nulo e l^.info != x faça
-        l <- l^.prox
-    fim enquanto
     se l = Nulo então
         retorne falso
     fim se
-    lixo <- l
-    l <- l^.prox
-    desaloca(lixo)
-    retorne verdadeiro
+        
 fim função

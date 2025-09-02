@@ -6,14 +6,43 @@ tipos
             prox: PNo
         fim registro
 
-função InsereNaPosiçãoP(ref l: PNo; x: real): lógico
+função InsereNaPosiçãoP(ref l: PNo; x: real; p: inteiro): lógico
 var
-    função Insere(ref p: PNo; i: inteiro): lógico
+    função Insere(ant, l: PNo; i: inteiro): lógico
     var
         novo: PNo
     início
-
+        se i = p então
+            novo <- aloca(TNo)
+            se novo = Nulo então
+                retorne falso
+            fim se
+            novo^.info <- x
+            novo^.prox <- l
+            se ant = Nulo então
+                novo^.prev <- Nulo
+                se l != Nulo então
+                    l^.prev <- novo
+                fim se
+                l <- novo
+                retorne verdadeiro
+            senão
+                novo^.prev <- ant
+                l^.prev <- novo
+                l <- novo
+                retorne verdadeiro
+            fim se
+        senão
+            se l = Nulo então
+                retorne falso
+            senão
+                retorne Insere(l, l^.prox, i+1)
+            fim se
+        fim se
     fim função
 início
-
+    se p <= 0 então
+        retorne falso
+    fim se
+    retorne Insere(Nulo, l, 1)
 fim função

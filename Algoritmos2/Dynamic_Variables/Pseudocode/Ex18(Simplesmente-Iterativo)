@@ -10,18 +10,8 @@ var
     novo: PNo
     i: inteiro
 início
-    se p < 0 então
+    se p <= 0 então
         retorne falso
-    fim se
-    se p = 0 então
-        novo <- aloca(TNo)
-        se novo = Nulo então
-            retorne falso
-        fim se
-        novo^.info <- x
-        novo^.prox <- l
-        l <- novo
-        retorne verdadeiro
     fim se
     i <- 1
     enquanto l != Nulo e i < p faça
