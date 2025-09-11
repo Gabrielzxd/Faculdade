@@ -1,0 +1,47 @@
+procedimento JuntaDoisArquivosOrdenadamente(s1, s2, s3: string)
+var
+    f1, f2, f3: sequencia de real
+    x, y: real
+início
+    se abre(f1, s1) e abre(f2, s2) e abre(f3, s3) então
+        leia(f1, x)
+        leia(f2, y)
+        enquanto não fds(f1) e não fds(f2) faça
+            se x > y então
+                escreva(f3, y)
+                leia(f2, y)
+            senão
+                se y > x então
+                    escreva(f3, x)
+                    leia(f1, x)
+                senão
+                    escreva(f3, x)
+                    leia(f1, x)
+                    leia(f2, y)
+                fim se
+            fim se
+        fim enquanto
+        se fds(f1) então
+            enquanto não fds(f2) faça
+                se x < y então
+                    escreva(f3, x)  
+                    fecha(f1)
+                fim se
+                escreva(f3, y)
+                leia(f2, y)
+            fim enquanto
+            fecha(f2)
+        fim se
+        se fds(f2) então
+            enquanto não fds(f1) faça
+                se y < x então
+                    escreva(f3, y)
+                    fecha(f2)
+                fim se
+                escreva(f3, x)
+                leia(f1, x)
+            fim enquanto
+            fecha(f1)
+        fim se
+    fim se
+fim procedimento

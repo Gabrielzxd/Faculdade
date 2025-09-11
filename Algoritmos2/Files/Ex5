@@ -4,7 +4,7 @@ var
     x: real
     i, soma: inteiro
 início
-    se não abre(f) então
+    se não abre(f, s) então
         retorne -99999999
     fim se
     i <- 1

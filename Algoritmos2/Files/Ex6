@@ -3,7 +3,7 @@ var
     f, g: sequencia de inteiro
     x: inteiro
 início
-    se não abre(f) então
+    se não abre(f, s) então
         retorne falso
     fim se
     se cria(g, "temp") então

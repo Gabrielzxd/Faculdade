@@ -1,0 +1,32 @@
+função TrocaValoresConsecutivosNoArquivo(s: string; p: inteiro): lógico
+var
+    f, g: sequencia de real
+    x, y: real
+    i, tam: inteiro
+início
+    se não abre(f, s) e não abre(g, s) então
+        retorne falso
+    fim se
+    tam <- 1
+    enquanto não fds(f) faça
+        leia(f,x)
+        tam <- tam + 1
+    fim enquanto
+    se tam >= p + 1 então
+        reinicia(f)
+        enquanto não fds(f) faça
+            leia(f,x)
+            se i = p então
+                leia(f, y)
+                escreva(g, y)
+            fim se
+            escreva(g, x)
+        fim enquanto
+        fecha(f)
+        fecha(g)
+        retorne verdadeiro
+    fim se
+    fecha(f)
+    fecha(g)
+    retorne falso
+fim função

@@ -9,6 +9,7 @@ início
             leia(f,x)
             qnt <- qnt + 1
         fim enquanto
+        reinicia(f)
         i <- 0
         enquanto i < qnt faça
             leia(g,x)

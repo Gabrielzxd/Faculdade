@@ -4,7 +4,7 @@ var
     x: inteiro
     inseriu: lógico
 início
-    se não abre(f) e não abre(g) então
+    se não abre(f, s) e não abre(g, s) então
         retorne falso
     fim se
     inseriu <- falso
@@ -26,5 +26,4 @@ início
     fecha(f)
     fecha(g)
     retorne verdadeiro
-    ,
 fim função

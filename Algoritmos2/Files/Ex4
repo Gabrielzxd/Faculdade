@@ -11,7 +11,7 @@ início
             tam <- tam + 1
         fim enquanto
         fecha(f)
-        se abre(f) então
+        se abre(f, nome) então
             i <- 1
             enquanto não fds(f) faça
                 leia(f,x)
