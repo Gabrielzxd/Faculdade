@@ -1,0 +1,25 @@
+função DuplicaArquivo(nome: string): lógico
+var
+    f, g: sequencia de inteiro
+    x, i, qnt: inteiro
+início
+    se abre(f, nome) e abre(g, nome) então
+        qnt <- 0
+        enquanto não fds(f) faça
+            leia(f,x)
+            qnt <- qnt + 1
+        fim enquanto
+        i <- 0
+        enquanto i < qnt faça
+            leia(g,x)
+            escreva(f, x)
+            i <- i + 1
+        fim enquanto
+        fecha(f)
+        fecha(g)
+        se qnt != 0 então
+            retorne verdadeiro
+        fim se
+    fim se
+    retorne falso
+fim função

@@ -1,0 +1,23 @@
+função AlteraArquivosSubstituindoValores(nome, a, b: string): inteiro
+var
+    f, g: sequencia de inteiro
+    qnt: inteiro
+    x: string
+início
+    qnt <- 0
+    se abre(f,nome) e abre(g, nome) então
+        enquanto não fds(f) faça
+            leia(f,x)
+            se x = a então
+                escreva(g,x)
+                qnt <- qnt + 1
+            senão
+                leia(f,x)
+            fim se
+        fim enquanto
+        fecha(f)
+        fecha(g)
+        retorne qnt
+    fim se
+    retorne -99999999
+fim função

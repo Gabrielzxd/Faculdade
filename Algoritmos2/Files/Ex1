@@ -1,0 +1,20 @@
+função Media(s: string): real
+var
+    soma, qnt, x: inteiro
+    f: sequencia de inteiro
+início
+    soma <- 0
+    qnt <- 0
+    se abre(f,x) então
+        enquanto não fds(f) faça
+            leia(f, x)
+            soma <- soma + x
+            qnt <- qnt + 1
+        fim enquanto
+        fecha(f)
+        se qnt != 0 então
+            retorne soma/qnt
+        fim se
+    fim se
+    retorne -99999999
+fim função

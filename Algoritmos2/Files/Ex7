@@ -1,0 +1,30 @@
+função InserirOrdenadoNoArquivo(s: string; num: inteiro): lógico
+var
+    f, g: sequencia de inteiro
+    x: inteiro
+    inseriu: lógico
+início
+    se não abre(f) e não abre(g) então
+        retorne falso
+    fim se
+    inseriu <- falso
+    enquanto não fds(f) faça
+        leia(f,x)
+        se x <= num então
+            leia(g,x)
+        senão
+            se não inseriu então
+                escreva(g, num)
+                inseriu <- verdadeiro
+            fim se
+            escreva(g, x)
+        fim se
+    fim enquanto
+    se não inseriu então
+        escreva(f, num)
+    fim se
+    fecha(f)
+    fecha(g)
+    retorne verdadeiro
+    ,
+fim função

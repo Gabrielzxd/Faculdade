@@ -1,0 +1,21 @@
+função SomaPosiçõesComValorDefinido(s: string; a: real): inteiro
+var
+    f: sequencia de real
+    x: real
+    i, soma: inteiro
+início
+    se não abre(f) então
+        retorne -99999999
+    fim se
+    i <- 1
+    soma <- 0
+    enquanto não fds(f) faça
+        leia(f,x)
+        se x = a então
+            soma <- soma + i
+        fim se
+        i <- i + 1
+    fim enquanto
+    fecha(f)
+    retorne soma
+fim função

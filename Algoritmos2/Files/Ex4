@@ -1,0 +1,25 @@
+procedimento ExibeMetadeSuperiorDoArquivo(nome: string)
+var
+    f: sequencia de real
+    x: real
+    tam, i: inteiro
+início
+    se abre(f, nome)então
+        tam <- o
+        enquanto não fds(f) faça
+            leia(f,x)
+            tam <- tam + 1
+        fim enquanto
+        fecha(f)
+        se abre(f) então
+            i <- 1
+            enquanto não fds(f) faça
+                leia(f,x)
+                se i > tam div 2 então
+                    escreva(x)
+                fim se
+            fim enquanto
+            fecha(f)
+        fim se
+    fim se
+fim procedimento

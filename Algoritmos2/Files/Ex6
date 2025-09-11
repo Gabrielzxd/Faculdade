@@ -1,0 +1,23 @@
+função RemoveElementoDoArquivo(s: string; num: inteiro): lógico
+var
+    f, g: sequencia de inteiro
+    x: inteiro
+início
+    se não abre(f) então
+        retorne falso
+    fim se
+    se cria(g, "temp") então
+        enquanto não fds(g) faça
+            leia(f,x)
+            se x != a então
+                escreva(g, x)
+            fim se
+        fim enquanto
+        fecha(f)
+        fecha(g)
+        apaga(f)
+        renomeia(g, s)
+        retorne verdadeiro
+    fim se
+    retorne falso
+fim função
