@@ -1,0 +1,31 @@
+função EncontraModa(s: string): inteiro
+var
+    frequencia: vetor[0..3000] de inteiro
+    f: sequencia de inteiro
+    x, maior, moda, i: inteiro
+início
+    se não abre(f,s) então
+        retorne -9999999999
+    fim se
+    para i de 0 até 3000 faça
+        frequencia[i] <- 0
+    fim para
+    enquanto não fds(f) faça
+        leia(f,x)
+        frequencia[x] <- frequencia[x] + 1
+    fim enquanto
+    fecha(f)
+    moda <- 0
+    para i de 0 até 3000 faça
+        se frequencia[i] > moda então
+            moda <- frequencia[i]
+            maior <- i
+        fim se
+    fim para
+    para i de 0 até 3000 faça
+        se frequencia[i] = moda e i > maior então
+            maior <- i
+        fim se
+    fim para
+    retorne maior
+fim função

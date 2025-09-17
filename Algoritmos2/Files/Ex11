@@ -1,0 +1,24 @@
+função SomatorioValoresDosArquivos(nome: string): inteiro
+var
+    f: sequencia de string
+    g: sequencia de inteiro
+    x: string
+    soma, y: inteiro
+iníco
+    se não abre(f, nome) então
+        retorne -99999999
+    fim se
+    soma <- 0
+    enquanto não fds(f) faça
+        leia(f,x)
+        se abre(g,x) então
+            enquanto não fds(g) faça
+                leia(g,y)
+                soma <- soma + y
+            fim enquanto
+            fecha(g)
+        fim se
+    fim enquanto
+    fecha(f)
+    retorne soma
+fim função

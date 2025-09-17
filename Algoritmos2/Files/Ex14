@@ -1,0 +1,22 @@
+função EncontraMediana(s: string): real
+var
+    f: sequencia de inteiro
+    frequencia: vetor[0..3000] de inteiro
+    qnt: inteiro
+início
+    se não abre(f, s) 
+        retorne -99999999
+    fim se
+    para i de 0 até 3000 faça
+        frequencia[i] <- 0
+    fim para
+    qnt <- 0
+    enquanto não fds(f) faça
+        leia(f,num)
+        frequencia[num] <- frequencia[num] + 1
+        qnt <- qnt + 1
+    fim enquanto
+    fecha(f)
+    i <- 1
+    soma <- 0
+fim função

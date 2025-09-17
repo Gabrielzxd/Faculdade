@@ -22,8 +22,8 @@ início
                 fim se  
             fim se
         fim enquanto
-        inseriuX <- falso
         se fds(f1) então
+            inseriuX <- falso
             enquanto não fds(f2) faça
                 se x < y então
                     escreva(f3, x)  
@@ -40,6 +40,7 @@ início
             fecha(f2)
             fecha(f3)
         senão
+            inseriuY <- falso
             enquanto não fds(f1) faça
                 se y < x então
                     escreva(f3, y)
@@ -58,4 +59,4 @@ início
         fecha(f3)
         fim se
     fim se
-fim procedimento    
+fim procedimento

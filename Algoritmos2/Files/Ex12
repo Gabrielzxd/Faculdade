@@ -1,0 +1,36 @@
+função ValoresAcimaDaMedia(nome: string): inteiro
+var
+    f: sequencia de string
+    g: sequencia de real
+    x: string
+    y, media, soma: real
+    qnt, i: inteiro
+início
+    se não abre(f, nome) então
+        retorne falso
+    fim se
+    qnt <- 0
+    enquanto não fds(f) faça
+        leia(f, x)
+        i <- 0
+        soma <- 0
+        se abre(g, x) então
+            enquanto não fds(g) faça
+                leia(g, y)
+                soma <- soma + y
+                i <- i + 1
+            fim enquanto
+            media <- soma/i
+            reinicia(g)
+            enquanto não fds(g) faça
+                leia(g, y)
+                se y > media então
+                    qnt <- qnt + 1
+                fim se
+            fim enquanto
+            fecha(g)
+        fim se
+    fim enquanto
+    fecha(f)
+    retorne qnt
+fim função
