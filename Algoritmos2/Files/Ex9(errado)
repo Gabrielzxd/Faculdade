@@ -1,62 +1,83 @@
 procedimento JuntaDoisArquivosOrdenadamente(s1, s2, s3: string)
 var
-    f1, f2, f3: sequencia de real
-    x, y: real
-    inseriuX, inseriuY: lógico
+  f1, f2, f3: sequencia de real
+  x, y: real
+  inseriuX, inseriuY: lógico
 início
-    se abre(f1, s1) e abre(f2, s2) e abre(f3, s3) então
-        leia(f1, x)
-        leia(f2, y)
+  se abre(f1, s1) então
+    se abre(f2, s2) então
+      se cria(f3, s3) então
+        se não fds(f1) então
+          leia(f1,x)
+        fim se
+        se não fds(f2) então
+          leia(f2, y)
+        fim se
         enquanto não fds(f1) e não fds(f2) faça
-            se x > y então
-                escreva(f3, y)
-                leia(f2, y)
-            senão
-                se y > x então
-                    escreva(f3, x)
-                    leia(f1, x)
-                senão
-                    escreva(f3, x)
-                    leia(f1, x)
-                    leia(f2, y)
-                fim se  
+          se x > y então
+            escreva(f3, y)
+            leia(f2, y)
+          senão
+            escreva(f3, x)
+            se x = y então
+              leia(f2, y)
             fim se
+            leia(f1, x)  
+          fim se
         fim enquanto
-        se fds(f1) então
+        se fds(f1) e fds(f2) então
+          se x > y então
+            escreva(f3, y)
+            escreva(f3, x)
+          senão
+            escreva(f3, x)
+            escreva(f3, y)
+          fim se
+          fecha(f1)
+          fecha(f2)
+          fecha(f3)
+        senão
+          se fds(f1) então
             inseriuX <- falso
             enquanto não fds(f2) faça
+              se não inseriuX então
                 se x < y então
-                    escreva(f3, x)  
-                    fecha(f1)
-                    inseriuX <- verdadeiro
+                  escreva(f3, x)
+                  inseriuX <- verdadeiro
+                  fecha(f1)
+                senão
+                  escreva(f3, y)
+                  leia(f2, y)
                 fim se
+              senão
                 escreva(f3, y)
                 leia(f2, y)
+              fim se
             fim enquanto
-            se não inseriuX então
-                escreva(f3,x)
-            fim se
-            fecha(f1)
             fecha(f2)
             fecha(f3)
-        senão
+          senão
             inseriuY <- falso
             enquanto não fds(f1) faça
+              se não inseriuY então
                 se y < x então
-                    escreva(f3, y)
-                    fecha(f2)
-                    inseriuY <- verdadeiro
+                  escreva(f3, y)
+                  inseriuY <- verdadeiro
+                  fecha(f2)
+                senão
+                  escreva(f3, x)
+                  leia(f1, x)
                 fim se
+              senão
                 escreva(f3, x)
                 leia(f1, x)
+              fim se
             fim enquanto
-            se não inseriuY então
-                escreva(f3, y)
-            fim se
             fecha(f1)
-        fecha(f1)
-        fecha(f2)
-        fecha(f3)
+            fecha(f3)
+          fim se
         fim se
+      fim se
     fim se
+  fim se   
 fim procedimento
