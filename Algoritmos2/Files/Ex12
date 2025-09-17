@@ -7,26 +7,32 @@ var
     qnt, i: inteiro
 início
     se não abre(f, nome) então
-        retorne falso
+        pare
     fim se
-    qnt <- 0
+    soma <- 0
+    i <- 0
     enquanto não fds(f) faça
         leia(f, x)
-        i <- 0
-        soma <- 0
         se abre(g, x) então
             enquanto não fds(g) faça
                 leia(g, y)
                 soma <- soma + y
                 i <- i + 1
             fim enquanto
-            media <- soma/i
-            reinicia(g)
+        fim se
+    fim enquanto
+    reinicia(f)
+    reinicia(g)
+    qnt <- 0
+    media <- soma/i
+    enquanto não fds(f) faça
+        leia(f, x)
+        se abre(g, x) então
             enquanto não fds(g) faça
-                leia(g, y)
-                se y > media então
-                    qnt <- qnt + 1
-                fim se
+              leia(g, y)
+              se y > media então
+                  qnt <- qnt + 1
+              fim se
             fim enquanto
             fecha(g)
         fim se
