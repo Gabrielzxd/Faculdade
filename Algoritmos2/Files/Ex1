@@ -12,9 +12,8 @@ início
             qnt <- qnt + 1
         fim enquanto
         fecha(f)
-        se qnt != 0 então
-            retorne soma/qnt
-        fim se
+        retorne soma/qnt
+    senão
+        pare
     fim se
-    retorne -99999999
 fim função

@@ -4,14 +4,18 @@ var
     x: inteiro
     inseriu: lógico
 início
-    se não abre(f, s) e não abre(g, s) então
+    se não abre(f, s) então 
         retorne falso
+    fim se
+    se não cria(g, s) então
+      fecha(f)
+      retorne falso
     fim se
     inseriu <- falso
     enquanto não fds(f) faça
         leia(f,x)
         se x <= num então
-            leia(g,x)
+            escreva(g,x)
         senão
             se não inseriu então
                 escreva(g, num)
@@ -24,6 +28,8 @@ início
         escreva(f, num)
     fim se
     fecha(f)
+    apaga(f)
+    renomeia(g, s)
     fecha(g)
     retorne verdadeiro
 fim função

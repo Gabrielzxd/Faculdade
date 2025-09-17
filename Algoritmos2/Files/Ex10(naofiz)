@@ -1,4 +1,43 @@
 função ConstroiArquivoOrdenado(s1, s2, s3: nome): lógico
 var
-    
+    f1, f2, f3: sequencia de real
+    num1, num2: real
+    acabou_seq1, acabou_seq2: lógico
+    função atualizar(ref f: sequencia de real; num: real): lógico 
+    início
+        se não fds(f) então
+          leia(f, num)
+          retorne falso
+        senão
+          retorne verdadeiro
+        fim se
+    fim função
 início
+    se não abre(f1) então
+        retorne falso
+    fim se
+    se não abre(f2) então
+        fecha(f1)
+        retorne falso
+    fim se
+    se não cria(f3) então
+        fecha(f1)
+        fecha(f2)
+        retorne falso
+    fim se
+    acabou_seq1 <- atualizar(f1, num1)
+    acabou_seq2 <- atua
+    enquanto não acabou_seq1 ou não acabou_seq1 faça
+        se acabou_seq1 ou (não acabou_seq2 e num1 > num2) então
+            escreva(f3, num2)
+            leia(f2, num2)
+        senão
+            escreva(f3, num1)
+            leia(f1, num1)
+        fim se
+    fim enquanto
+    fecha(f1)
+    fecha(f2)
+    fecha(f3)
+    retorne verdadeiro
+fim função

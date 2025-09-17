@@ -3,24 +3,28 @@ var
     f, g: sequencia de inteiro
     x, i, qnt: inteiro
 início
-    se abre(f, nome) e abre(g, nome) então
-        qnt <- 0
-        enquanto não fds(f) faça
-            leia(f,x)
-            qnt <- qnt + 1
-        fim enquanto
-        reinicia(f)
-        i <- 0
-        enquanto i < qnt faça
-            leia(g,x)
-            escreva(f, x)
-            i <- i + 1
-        fim enquanto
-        fecha(f)
-        fecha(g)
-        se qnt != 0 então
+    se abre(f, nome) então
+        se cria(g, "temp.dat") então
+            qnt <- 0
+            enquanto não fds(f) faça
+                leia(f,x)
+                escreva(g,x)
+                qnt <- qnt + 1
+            fim enquanto
+            reinicia(f)
+            i <- 1
+            enquanto i <= qnt faça
+                leia(f,x)
+                escreva(g, x)
+                i <- i + 1
+            fim enquanto
+            fecha(f)
+            apaga(f)
+            renomeia(g, nome)
+            fecha(g)
             retorne verdadeiro
         fim se
+        retorne falso
     fim se
     retorne falso
 fim função

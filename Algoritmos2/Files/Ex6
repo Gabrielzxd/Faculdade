@@ -6,7 +6,7 @@ início
     se não abre(f, s) então
         retorne falso
     fim se
-    se cria(g, "temp") então
+    se cria(g, "temp.dat") então
         enquanto não fds(g) faça
             leia(f,x)
             se x != a então
