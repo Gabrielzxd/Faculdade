@@ -1,0 +1,4 @@
+função SetimoMaiorTermo(nome: string): real
+var
+    vet: vetor[1..7] de real
+    f: sequencia de real

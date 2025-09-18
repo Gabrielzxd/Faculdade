@@ -2,10 +2,11 @@ função EncontraMediana(s: string): real
 var
     f: sequencia de inteiro
     frequencia: vetor[0..3000] de inteiro
-    qnt: inteiro
+    qnt, i, j, mediana: inteiro
+    par: lógico
 início
     se não abre(f, s) 
-        retorne -99999999
+        pare
     fim se
     para i de 0 até 3000 faça
         frequencia[i] <- 0
@@ -17,6 +18,27 @@ início
         qnt <- qnt + 1
     fim enquanto
     fecha(f)
-    i <- 1
-    soma <- 0
+    j <- 0
+    se qnt mod 2 == 0 então
+        par <- verdadeiro
+    fim se
+    i <- 0
+    enquanto i <= 3000 faça
+        se j == qnt div 2 então
+            mediana <- i
+            se não par então
+                retorne mediana
+            fim se
+        fim se
+        se j == qnt div 2 + 1 então
+            mediana <- (mediana + i) div 2
+            retorne mediana
+        fim se
+        se frequencia[i] > 0 então
+            j <- j + 1
+            frequencia[i] <- frequencia[i] - 1
+        senão
+            i <- i + 1
+        fim se
+    fim enquanto
 fim função
